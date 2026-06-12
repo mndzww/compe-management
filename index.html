@@ -15,20 +15,19 @@ input,button{font-family:inherit}
 .o3{width:320px;height:320px;top:45%;left:55%;transform:translate(-50%,-50%);background:radial-gradient(circle,rgba(34,211,160,0.07) 0%,transparent 70%)}
 .page{position:relative;z-index:1;min-height:100vh}
 
-/* Hero */
-.hero{padding:44px 28px 36px;max-width:980px;margin:0 auto;display:grid;grid-template-columns:1fr 320px;gap:32px;align-items:center}
-@media(max-width:700px){.hero{grid-template-columns:1fr}}
+/* ── Hero ── */
+.hero{padding:44px 32px 36px;max-width:980px;margin:0 auto;display:grid;grid-template-columns:1fr 300px;gap:32px;align-items:center}
 .eyebrow{font-size:10px;font-weight:700;letter-spacing:0.16em;color:rgba(255,255,255,0.3);text-transform:uppercase;margin-bottom:12px;display:flex;align-items:center;gap:8px}
 .eyebrow::before{content:'';width:20px;height:1px;background:rgba(255,255,255,0.3)}
 .hero-title{font-size:27px;font-weight:800;line-height:1.2;letter-spacing:-0.4px;margin-bottom:8px}
 .grad{background:linear-gradient(100deg,#A78BFA,#60A5FA);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .hero-sub{font-size:12px;color:rgba(255,255,255,0.35);margin-bottom:28px;letter-spacing:0.02em}
-.stats-row{display:flex;gap:0;flex-wrap:wrap;align-items:center}
+.stats-row{display:flex;align-items:center;flex-wrap:wrap;gap:0}
 .stat-item{padding:0 20px 0 0;margin-right:20px;border-right:1px solid rgba(255,255,255,0.07)}
 .stat-item:last-child{border:none;margin:0;padding:0}
 .sv{font-size:20px;font-weight:800;color:white}
 .sl{font-size:10px;color:rgba(255,255,255,0.3);margin-top:2px;letter-spacing:0.06em;text-transform:uppercase}
-.sync-badge{display:inline-flex;align-items:center;gap:5px;padding:4px 10px;border-radius:20px;font-size:10px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;border:1px solid rgba(255,255,255,0.08);margin-top:16px}
+.sync-badge{display:inline-flex;align-items:center;gap:5px;padding:4px 10px;border-radius:20px;font-size:10px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;border:1px solid rgba(255,255,255,0.08);margin-top:14px}
 .sync-dot{width:6px;height:6px;border-radius:50%;transition:all .3s}
 .sync-ok .sync-dot{background:#34D399;box-shadow:0 0 6px rgba(52,211,153,0.7)}
 .sync-ok{color:rgba(52,211,153,0.8)}
@@ -38,8 +37,8 @@ input,button{font-family:inherit}
 .sync-err{color:rgba(255,107,107,0.8)}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
 
-/* Hero right panel */
-.hero-panel{background:rgba(255,255,255,0.05);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.10);border-radius:18px;padding:20px;min-height:200px}
+/* ── Hero right panel ── */
+.hero-panel{background:rgba(255,255,255,0.05);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.10);border-radius:18px;padding:20px}
 .panel-label{font-size:9px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.3);margin-bottom:14px;display:flex;align-items:center;justify-content:space-between}
 .live-dot{width:5px;height:5px;border-radius:50%;background:#34D399;box-shadow:0 0 6px rgba(52,211,153,.7);animation:pulse .8s ease-in-out infinite}
 .panel-row{margin-bottom:12px}
@@ -49,42 +48,41 @@ input,button{font-family:inherit}
 .pr-count{font-size:10px;font-weight:700;flex-shrink:0}
 .pr-track{background:rgba(255,255,255,0.07);border-radius:3px;height:3px;overflow:hidden}
 .pr-bar{height:100%;border-radius:3px;transition:width .5s ease}
-.panel-empty{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:160px;gap:16px}
-.panel-empty-rings{position:relative;width:80px;height:80px}
+.panel-empty{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:140px;gap:14px}
+.panel-empty-rings{position:relative;width:72px;height:72px}
 .ring{position:absolute;border-radius:50%;border:1.5px solid}
 .ring1{inset:0;border-color:rgba(124,92,240,0.3);animation:spin 8s linear infinite}
 .ring2{inset:8px;border-color:rgba(56,182,255,0.2);animation:spin 6s linear infinite reverse}
 .ring3{inset:16px;border-color:rgba(34,211,160,0.25);animation:spin 4s linear infinite}
-.ring-center{position:absolute;inset:28px;border-radius:50%;background:rgba(124,92,240,0.15);border:1px solid rgba(124,92,240,0.3)}
+.ring-center{position:absolute;inset:26px;border-radius:50%;background:rgba(124,92,240,0.15);border:1px solid rgba(124,92,240,0.3)}
 @keyframes spin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
-.panel-empty-text{font-size:11px;color:rgba(255,255,255,0.25);text-align:center;line-height:1.5}
+.panel-empty-text{font-size:11px;color:rgba(255,255,255,0.25);text-align:center;line-height:1.6}
 .panel-footer{border-top:1px solid rgba(255,255,255,0.06);margin-top:14px;padding-top:10px;display:flex;justify-content:space-between;font-size:10px;color:rgba(255,255,255,0.3)}
 .panel-footer span{font-weight:700;color:rgba(255,255,255,0.55)}
 
-/* Loading */
+/* ── Loading ── */
 .loading{position:fixed;inset:0;background:#090E1A;z-index:100;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;transition:opacity .5s}
 .loading-dots{display:flex;gap:8px}
 .loading-dot{width:8px;height:8px;border-radius:50%;animation:ldot 1.2s ease-in-out infinite}
-.ld1{background:#7C5CF0;animation-delay:0s}
-.ld2{background:#60A5FA;animation-delay:.2s}
-.ld3{background:#34D399;animation-delay:.4s}
+.ld1{background:#7C5CF0}.ld2{background:#60A5FA;animation-delay:.2s}.ld3{background:#34D399;animation-delay:.4s}
 @keyframes ldot{0%,80%,100%{transform:scale(0);opacity:.3}40%{transform:scale(1);opacity:1}}
 .loading-text{font-size:11px;color:rgba(255,255,255,0.3);letter-spacing:0.12em;text-transform:uppercase}
 
-.body{max-width:980px;margin:0 auto;padding:0 28px 48px}
+/* ── Body ── */
+.body{max-width:980px;margin:0 auto;padding:0 32px 48px}
 .line{height:1px;background:rgba(255,255,255,0.06);margin-bottom:28px}
 .sh{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px}
 .st{font-size:10px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.35)}
-.btn-p{background:linear-gradient(135deg,#7C5CF0 0%,#4F8EF7 100%);color:white;border:none;padding:8px 16px;border-radius:8px;font-size:12px;font-weight:700;cursor:pointer;box-shadow:0 4px 20px rgba(124,92,240,.35);transition:all .2s}
+.btn-p{background:linear-gradient(135deg,#7C5CF0 0%,#4F8EF7 100%);color:white;border:none;padding:9px 16px;border-radius:8px;font-size:12px;font-weight:700;cursor:pointer;box-shadow:0 4px 20px rgba(124,92,240,.35);transition:all .2s;min-height:36px}
 .btn-p:hover{transform:translateY(-1px);box-shadow:0 6px 24px rgba(124,92,240,.5)}
-.btn-o{background:rgba(255,255,255,0.06);color:rgba(255,255,255,0.65);border:1px solid rgba(255,255,255,0.13);padding:7px 15px;border-radius:8px;font-size:12px;font-weight:600;cursor:pointer;transition:all .2s}
+.btn-o{background:rgba(255,255,255,0.06);color:rgba(255,255,255,0.65);border:1px solid rgba(255,255,255,0.13);padding:8px 15px;border-radius:8px;font-size:12px;font-weight:600;cursor:pointer;transition:all .2s;min-height:36px}
 .btn-o:hover{background:rgba(255,255,255,0.1);border-color:rgba(255,255,255,0.22)}
-.btn-g{background:rgba(255,255,255,0.04);color:rgba(255,255,255,0.35);border:1px solid rgba(255,255,255,0.08);padding:7px 13px;border-radius:8px;font-size:12px;cursor:pointer}
+.btn-g{background:rgba(255,255,255,0.04);color:rgba(255,255,255,0.35);border:1px solid rgba(255,255,255,0.08);padding:8px 13px;border-radius:8px;font-size:12px;cursor:pointer;min-height:36px}
 .fbox{background:rgba(255,255,255,0.05);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.1);border-radius:12px;padding:16px;margin-bottom:14px}
 .frow{display:flex;gap:10px;align-items:flex-end;flex-wrap:wrap}
 .fg{display:flex;flex-direction:column;gap:5px}
 .fl{font-size:10px;font-weight:700;letter-spacing:.1em;color:rgba(255,255,255,0.3);text-transform:uppercase}
-.fi{background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.11);border-radius:8px;padding:8px 12px;font-size:13px;color:white;outline:none;transition:all .2s;width:100%}
+.fi{background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.11);border-radius:8px;padding:10px 12px;font-size:13px;color:white;outline:none;transition:all .2s;width:100%;min-height:40px}
 .fi::placeholder{color:rgba(255,255,255,0.22)}
 .fi:focus{border-color:rgba(124,92,240,.55);background:rgba(124,92,240,.07);box-shadow:0 0 0 3px rgba(124,92,240,.1)}
 .cgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px;margin-bottom:32px}
@@ -97,10 +95,10 @@ input,button{font-family:inherit}
 .smt{display:flex;justify-content:space-between;font-size:11px;font-weight:600}
 .tags{display:flex;flex-wrap:wrap;gap:4px;margin-top:10px}
 .tag{font-size:10px;padding:2px 8px;border-radius:20px;font-weight:600;background:rgba(52,211,153,0.1);color:#34D399;border:1px solid rgba(52,211,153,0.2)}
-.dbtn{background:none;border:none;color:rgba(255,255,255,0.18);font-size:18px;line-height:1;cursor:pointer;padding:0;transition:color .15s;flex-shrink:0}
+.dbtn{background:none;border:none;color:rgba(255,255,255,0.18);font-size:20px;line-height:1;cursor:pointer;padding:4px;transition:color .15s;flex-shrink:0;min-width:28px;min-height:28px;display:flex;align-items:center;justify-content:center}
 .dbtn:hover{color:rgba(255,80,80,.75)}
 .tw{background:rgba(255,255,255,0.04);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.08);border-radius:16px;overflow:hidden;margin-bottom:32px}
-.tsc{overflow-x:auto}
+.tsc{overflow-x:auto;-webkit-overflow-scrolling:touch}
 table{width:100%;border-collapse:collapse;font-size:12px}
 th{padding:12px 14px;font-size:9px;font-weight:700;letter-spacing:.1em;color:rgba(255,255,255,0.3);text-transform:uppercase;background:rgba(255,255,255,0.03);border-bottom:1px solid rgba(255,255,255,0.07);text-align:center;white-space:nowrap}
 th.tl{text-align:left}
@@ -108,22 +106,77 @@ td{padding:11px 14px;border-bottom:1px solid rgba(255,255,255,0.04);text-align:c
 td.tl{text-align:left}
 tr:last-child td{border-bottom:none}
 tr:hover td{background:rgba(255,255,255,0.02)}
-.av{width:30px;height:30px;border-radius:50%;background:linear-gradient(135deg,rgba(124,92,240,.5),rgba(56,182,255,.5));display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;color:white;flex-shrink:0;border:1px solid rgba(255,255,255,0.15)}
+.av{width:32px;height:32px;border-radius:50%;background:linear-gradient(135deg,rgba(124,92,240,.5),rgba(56,182,255,.5));display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;color:white;flex-shrink:0;border:1px solid rgba(255,255,255,0.15)}
 .mn2{font-size:13px;font-weight:600;color:rgba(255,255,255,0.88)}
 .mc{font-size:10px;color:rgba(255,255,255,0.28)}
-.cb{width:30px;height:30px;border-radius:8px;border:none;display:inline-flex;align-items:center;justify-content:center;font-size:13px;transition:all .15s;cursor:pointer}
+.cb{width:32px;height:32px;border-radius:8px;border:none;display:inline-flex;align-items:center;justify-content:center;font-size:13px;transition:all .15s;cursor:pointer}
 .con{background:rgba(34,211,160,0.12);color:#22D3A0;font-weight:900;border:1px solid rgba(34,211,160,0.22);box-shadow:0 0 12px rgba(34,211,160,0.18)}
 .coff{background:rgba(255,255,255,0.04);color:rgba(255,255,255,0.18);border:1px solid rgba(255,255,255,0.08)}
 .coff:hover{background:rgba(124,92,240,0.12);color:#A78BFA;border-color:rgba(124,92,240,.3)}
 .cdis{background:rgba(255,255,255,0.02);color:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.04);cursor:not-allowed}
 tfoot td{background:rgba(255,255,255,0.03);font-weight:700;border-top:1px solid rgba(255,255,255,0.06)}
-.th{padding:8px 16px;border-top:1px solid rgba(255,255,255,0.05);font-size:10px;color:rgba(255,255,255,0.18);letter-spacing:.06em}
+.th{padding:9px 16px;border-top:1px solid rgba(255,255,255,0.05);font-size:10px;color:rgba(255,255,255,0.18);letter-spacing:.06em}
 .mgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(185px,1fr));gap:10px}
 .mcard{background:rgba(255,255,255,0.05);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:13px 15px;display:flex;align-items:center;gap:10px;transition:all .2s}
 .mcard:hover{background:rgba(255,255,255,0.08);border-color:rgba(255,255,255,0.15);transform:translateY(-1px)}
 .empty{background:rgba(255,255,255,0.02);border:1.5px dashed rgba(255,255,255,0.08);border-radius:14px;padding:36px;text-align:center;color:rgba(255,255,255,0.22)}
 .ei{font-size:28px;margin-bottom:10px;opacity:.6}
 .et{font-size:13px}
+
+/* ══════════════════════════════
+   RESPONSIVE — Tablet (≤ 768px)
+══════════════════════════════ */
+@media (max-width: 768px) {
+  .hero { grid-template-columns: 1fr; padding: 36px 24px 28px; gap: 24px; }
+  .hero-title { font-size: 23px; }
+  .body { padding: 0 24px 40px; }
+  .cgrid { grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); }
+  .mgrid { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); }
+  .hero-panel { padding: 16px; }
+  .panel-empty { min-height: 100px; flex-direction: row; gap: 16px; }
+  .panel-empty-rings { width: 56px; height: 56px; flex-shrink: 0; }
+  .panel-empty-text { text-align: left; }
+}
+
+/* ══════════════════════════════
+   RESPONSIVE — Mobile (≤ 480px)
+══════════════════════════════ */
+@media (max-width: 480px) {
+  .hero { padding: 28px 16px 24px; gap: 20px; }
+  .hero-title { font-size: 20px; }
+  .hero-sub { font-size: 11px; margin-bottom: 20px; }
+  .eyebrow { font-size: 9px; }
+  .stat-item { padding: 0 14px 0 0; margin-right: 14px; }
+  .sv { font-size: 18px; }
+  .body { padding: 0 16px 32px; }
+  .line { margin-bottom: 20px; }
+  .sh { flex-wrap: wrap; gap: 10px; }
+  .st { flex: 1 1 100%; }
+  .btn-p, .btn-o { width: 100%; justify-content: center; padding: 11px 16px; font-size: 13px; }
+  .cgrid { grid-template-columns: 1fr; }
+  .mgrid { grid-template-columns: 1fr 1fr; }
+  .frow { flex-direction: column; }
+  .frow .fg { width: 100% !important; min-width: unset !important; }
+  .frow > div:last-child { width: 100%; flex-direction: column; }
+  .frow > div:last-child button { width: 100%; justify-content: center; }
+  .ccard { padding: 14px; }
+  td, th { padding: 10px 10px; }
+  .hero-panel { display: none; }
+  .panel-footer { flex-direction: column; gap: 4px; }
+  .empty { padding: 28px 20px; }
+}
+
+/* ══════════════════════════════
+   RESPONSIVE — Small mobile (≤ 360px)
+══════════════════════════════ */
+@media (max-width: 360px) {
+  .hero { padding: 24px 14px 20px; }
+  .hero-title { font-size: 18px; }
+  .body { padding: 0 14px 28px; }
+  .mgrid { grid-template-columns: 1fr; }
+  .stat-item { padding: 0 10px 0 0; margin-right: 10px; }
+  .sv { font-size: 16px; }
+}
 </style>
 </head>
 <body>
@@ -143,7 +196,6 @@ tfoot td{background:rgba(255,255,255,0.03);font-weight:700;border-top:1px solid 
 
 <div class="page" id="app" style="opacity:0;transition:opacity .4s">
   <div class="hero">
-    <!-- Left -->
     <div>
       <div class="eyebrow">Competition Hub · Universitas Padjadjaran</div>
       <h1 class="hero-title">Technology Competition<br><span class="grad">Management Center</span></h1>
@@ -158,13 +210,8 @@ tfoot td{background:rgba(255,255,255,0.03);font-weight:700;border-top:1px solid 
         <span id="sync-text">Menghubungkan</span>
       </div>
     </div>
-
-    <!-- Right panel -->
     <div class="hero-panel">
-      <div class="panel-label">
-        Live Overview
-        <div class="live-dot"></div>
-      </div>
+      <div class="panel-label">Live Overview <div class="live-dot"></div></div>
       <div id="panel-body"></div>
     </div>
   </div>
@@ -187,7 +234,7 @@ tfoot td{background:rgba(255,255,255,0.03);font-weight:700;border-top:1px solid 
             <label class="fl">Maks. Peserta</label>
             <input class="fi" id="cm" type="number" min="1" max="20" value="3">
           </div>
-          <div style="display:flex;gap:6px;padding-bottom:1px">
+          <div style="display:flex;gap:8px;padding-bottom:1px">
             <button class="btn-p" onclick="sc2()">Simpan</button>
             <button class="btn-g" onclick="tf('cf')">Batal</button>
           </div>
@@ -215,7 +262,7 @@ tfoot td{background:rgba(255,255,255,0.03);font-weight:700;border-top:1px solid 
             <label class="fl">Nama Anggota</label>
             <input class="fi" id="mnn" placeholder="Nama lengkap anggota" onkeydown="if(event.key==='Enter')sm2()">
           </div>
-          <div style="display:flex;gap:6px;padding-bottom:1px">
+          <div style="display:flex;gap:8px;padding-bottom:1px">
             <button class="btn-p" onclick="sm2()">Simpan</button>
             <button class="btn-g" onclick="tf('mf')">Batal</button>
           </div>
@@ -297,9 +344,8 @@ async function sa() {
 const cc = id => A.filter(a => a.c === id).length;
 const cm = id => A.filter(a => a.m === id).length;
 const ia = (m,c) => A.some(a => a.m === m && a.c === c);
-
-function slotColor(f,mx){const p=f/mx;return p>=1?'#FF6B6B':p>=.67?'#FBBF24':'#34D399'}
-function slotGlow(f,mx){const p=f/mx;return p>=1?'rgba(255,107,107,.4)':p>=.67?'rgba(251,191,36,.35)':'rgba(52,211,153,.3)'}
+const slotColor = (f,mx) => { const p=f/mx; return p>=1?'#FF6B6B':p>=.67?'#FBBF24':'#34D399'; };
+const slotGlow  = (f,mx) => { const p=f/mx; return p>=1?'rgba(255,107,107,.4)':p>=.67?'rgba(251,191,36,.35)':'rgba(52,211,153,.3)'; };
 
 function render() {
   const tot = A.length, mxs = C.reduce((s,c) => s+c.max, 0);
@@ -307,7 +353,7 @@ function render() {
   document.getElementById('sm').textContent = M.length;
   document.getElementById('ss').textContent = `${tot}/${mxs}`;
 
-  // Hero right panel
+  // Panel kanan
   const pb = document.getElementById('panel-body');
   if (!C.length) {
     pb.innerHTML = `<div class="panel-empty">
@@ -319,22 +365,16 @@ function render() {
     </div>`;
   } else {
     const rows = C.map(c => {
-      const f = cc(c.id), p = Math.min(f/c.max,1), col = slotColor(f,c.max);
-      const gl = slotGlow(f,c.max);
-      const t = c.title.length > 22 ? c.title.substring(0,22)+'…' : c.title;
+      const f=cc(c.id), p=Math.min(f/c.max,1), col=slotColor(f,c.max), gl=slotGlow(f,c.max);
+      const t = c.title.length>22 ? c.title.substring(0,22)+'…' : c.title;
       return `<div class="panel-row">
-        <div class="pr-header">
-          <span class="pr-name">${t}</span>
-          <span class="pr-count" style="color:${col}">${f}/${c.max}</span>
-        </div>
+        <div class="pr-header"><span class="pr-name">${t}</span><span class="pr-count" style="color:${col}">${f}/${c.max}</span></div>
         <div class="pr-track"><div class="pr-bar" style="width:${p*100}%;background:${col};box-shadow:0 0 6px ${gl}"></div></div>
       </div>`;
     }).join('');
-    const freeSlots = mxs - tot;
-    const pctFill = mxs > 0 ? Math.round((tot/mxs)*100) : 0;
     pb.innerHTML = rows + `<div class="panel-footer">
-      <div>Terisi <span>${pctFill}%</span></div>
-      <div>Sisa slot <span>${freeSlots}</span></div>
+      <div>Terisi <span>${mxs>0?Math.round((tot/mxs)*100):0}%</span></div>
+      <div>Sisa slot <span>${mxs-tot}</span></div>
     </div>`;
   }
 
@@ -344,9 +384,8 @@ function render() {
     cl.innerHTML = `<div class="empty" style="grid-column:1/-1"><div class="ei">🏆</div><div class="et">Belum ada lomba — tambahkan yang pertama!</div></div>`;
   } else {
     cl.innerHTML = C.map(c => {
-      const f = cc(c.id), p = Math.min(f/c.max,1);
-      const col = slotColor(f,c.max), gl = slotGlow(f,c.max);
-      const st = f >= c.max ? 'Penuh' : `${c.max-f} slot tersisa`;
+      const f=cc(c.id), p=Math.min(f/c.max,1), col=slotColor(f,c.max), gl=slotGlow(f,c.max);
+      const st = f>=c.max?'Penuh':`${c.max-f} slot tersisa`;
       const mems = M.filter(m => ia(m.id,c.id));
       return `<div class="ccard">
         <div style="position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,${col},transparent);box-shadow:0 1px 8px ${gl}"></div>
@@ -361,18 +400,18 @@ function render() {
     }).join('');
   }
 
-  // Table
+  // Tabel distribusi
   const tse = document.getElementById('ts');
-  if (C.length > 0 && M.length > 0) {
+  if (C.length>0 && M.length>0) {
     tse.style.display = 'block';
     const ths = C.map(c => {
-      const f = cc(c.id), col = slotColor(f,c.max);
-      const t = c.title.length > 14 ? c.title.substring(0,14)+'…' : c.title;
+      const f=cc(c.id), col=slotColor(f,c.max);
+      const t = c.title.length>14 ? c.title.substring(0,14)+'…' : c.title;
       return `<th>${t}<br><span style="font-weight:700;color:${col};font-size:9px;letter-spacing:0">${f}/${c.max}</span></th>`;
     }).join('');
     const rows = M.map(m => {
       const cells = C.map(c => {
-        const on = ia(m.id,c.id), full = cc(c.id) >= c.max && !on;
+        const on=ia(m.id,c.id), full=cc(c.id)>=c.max&&!on;
         const cls = on?'cb con':full?'cb cdis':'cb coff';
         return `<td><button class="${cls}" ${full?'disabled':''} onclick="window._ta('${m.id}','${c.id}')">${on?'✓':'·'}</button></td>`;
       }).join('');
@@ -382,7 +421,7 @@ function render() {
         <div><div class="mn2">${m.name}</div><div class="mc">${cnt} lomba</div></div>
       </div></td>${cells}<td><span style="font-weight:800;font-size:13px;color:${cnt>0?'#A78BFA':'rgba(255,255,255,0.18)'}">${cnt}</span></td></tr>`;
     }).join('');
-    const fc = C.map(c => { const f = cc(c.id); return `<td style="color:${slotColor(f,c.max)}">${f}/${c.max}</td>`; }).join('');
+    const fc = C.map(c => { const f=cc(c.id); return `<td style="color:${slotColor(f,c.max)}">${f}/${c.max}</td>`; }).join('');
     document.getElementById('dt').innerHTML = `
       <thead><tr><th class="tl">Anggota</th>${ths}<th>Total</th></tr></thead>
       <tbody>${rows}</tbody>
@@ -405,30 +444,29 @@ function render() {
   }
 }
 
-// Expose functions to window (needed for inline onclick with type="module")
-window.tf = function(id) {
+// Expose ke window (required untuk type="module" + inline onclick)
+window.tf = id => {
   const f = document.getElementById(id);
-  f.style.display = f.style.display === 'none' ? 'block' : 'none';
-  if (f.style.display === 'block') { const i = f.querySelector('input'); if (i) i.focus(); }
+  f.style.display = f.style.display==='none' ? 'block' : 'none';
+  if (f.style.display==='block') { const i=f.querySelector('input'); if(i) i.focus(); }
 };
-window.sc2 = function() {
-  const t = document.getElementById('cn').value.trim();
-  const mx = parseInt(document.getElementById('cm').value)||3;
+window.sc2 = () => {
+  const t=document.getElementById('cn').value.trim(), mx=parseInt(document.getElementById('cm').value)||3;
   if (!t) return;
-  C.push({ id: gid(), title: t, max: mx }); sa();
-  document.getElementById('cn').value = ''; document.getElementById('cm').value = '3';
-  document.getElementById('cf').style.display = 'none'; render();
+  C.push({id:gid(),title:t,max:mx}); sa();
+  document.getElementById('cn').value=''; document.getElementById('cm').value='3';
+  document.getElementById('cf').style.display='none'; render();
 };
-window._dc = function(id) { C = C.filter(c => c.id !== id); A = A.filter(a => a.c !== id); sa(); render(); };
-window.sm2 = function() {
-  const n = document.getElementById('mnn').value.trim(); if (!n) return;
-  M.push({ id: gid(), name: n }); sa();
-  document.getElementById('mnn').value = ''; document.getElementById('mf').style.display = 'none'; render();
+window._dc = id => { C=C.filter(c=>c.id!==id); A=A.filter(a=>a.c!==id); sa(); render(); };
+window.sm2 = () => {
+  const n=document.getElementById('mnn').value.trim(); if(!n) return;
+  M.push({id:gid(),name:n}); sa();
+  document.getElementById('mnn').value=''; document.getElementById('mf').style.display='none'; render();
 };
-window._dm = function(id) { M = M.filter(m => m.id !== id); A = A.filter(a => a.m !== id); sa(); render(); };
-window._ta = function(mid, cid) {
-  if (ia(mid,cid)) { A = A.filter(a => !(a.m===mid && a.c===cid)); }
-  else { const comp = C.find(c => c.id === cid); if (cc(cid) >= comp.max) return; A.push({m:mid,c:cid}); }
+window._dm = id => { M=M.filter(m=>m.id!==id); A=A.filter(a=>a.m!==id); sa(); render(); };
+window._ta = (mid,cid) => {
+  if (ia(mid,cid)) { A=A.filter(a=>!(a.m===mid&&a.c===cid)); }
+  else { const comp=C.find(c=>c.id===cid); if(cc(cid)>=comp.max) return; A.push({m:mid,c:cid}); }
   sa(); render();
 };
 
