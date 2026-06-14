@@ -15,7 +15,7 @@ input,button{font-family:inherit}
 .o3{width:320px;height:320px;top:45%;left:55%;transform:translate(-50%,-50%);background:radial-gradient(circle,rgba(34,211,160,0.07) 0%,transparent 70%)}
 .page{position:relative;z-index:1;min-height:100vh}
 
-/* ── Hero ── */
+/* Hero */
 .hero{padding:44px 32px 36px;max-width:980px;margin:0 auto;display:grid;grid-template-columns:1fr 300px;gap:32px;align-items:center}
 .eyebrow{font-size:10px;font-weight:700;letter-spacing:0.16em;color:rgba(255,255,255,0.3);text-transform:uppercase;margin-bottom:12px;display:flex;align-items:center;gap:8px}
 .eyebrow::before{content:'';width:20px;height:1px;background:rgba(255,255,255,0.3)}
@@ -31,18 +31,17 @@ input,button{font-family:inherit}
 .sync-dot{width:6px;height:6px;border-radius:50%;transition:all .3s}
 .sync-ok .sync-dot{background:#34D399;box-shadow:0 0 6px rgba(52,211,153,0.7)}
 .sync-ok{color:rgba(52,211,153,0.8)}
-.sync-ing .sync-dot{background:#FBBF24;animation:pulse .8s ease-in-out infinite}
+.sync-ing .sync-dot{background:#FBBF24;animation:blink .8s ease-in-out infinite}
 .sync-ing{color:rgba(251,191,36,0.8)}
 .sync-err .sync-dot{background:#FF6B6B}
 .sync-err{color:rgba(255,107,107,0.8)}
-@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
 
-/* ── Hero right panel ── */
+/* Hero right panel */
 .hero-panel{background:rgba(255,255,255,0.05);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.10);border-radius:18px;padding:20px}
 .panel-label{font-size:9px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.3);margin-bottom:14px;display:flex;align-items:center;justify-content:space-between}
-.live-dot{width:5px;height:5px;border-radius:50%;background:#34D399;box-shadow:0 0 6px rgba(52,211,153,.7);animation:pulse .8s ease-in-out infinite}
-.panel-row{margin-bottom:12px}
-.panel-row:last-child{margin-bottom:0}
+.live-dot{width:5px;height:5px;border-radius:50%;background:#34D399;box-shadow:0 0 6px rgba(52,211,153,.7);animation:blink .8s ease-in-out infinite}
+.panel-row{margin-bottom:12px}.panel-row:last-child{margin-bottom:0}
 .pr-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:5px}
 .pr-name{font-size:12px;font-weight:600;color:rgba(255,255,255,0.8);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:180px}
 .pr-count{font-size:10px;font-weight:700;flex-shrink:0}
@@ -60,7 +59,7 @@ input,button{font-family:inherit}
 .panel-footer{border-top:1px solid rgba(255,255,255,0.06);margin-top:14px;padding-top:10px;display:flex;justify-content:space-between;font-size:10px;color:rgba(255,255,255,0.3)}
 .panel-footer span{font-weight:700;color:rgba(255,255,255,0.55)}
 
-/* ── Loading ── */
+/* Loading */
 .loading{position:fixed;inset:0;background:#090E1A;z-index:100;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;transition:opacity .5s}
 .loading-dots{display:flex;gap:8px}
 .loading-dot{width:8px;height:8px;border-radius:50%;animation:ldot 1.2s ease-in-out infinite}
@@ -68,7 +67,7 @@ input,button{font-family:inherit}
 @keyframes ldot{0%,80%,100%{transform:scale(0);opacity:.3}40%{transform:scale(1);opacity:1}}
 .loading-text{font-size:11px;color:rgba(255,255,255,0.3);letter-spacing:0.12em;text-transform:uppercase}
 
-/* ── Body ── */
+/* Body */
 .body{max-width:980px;margin:0 auto;padding:0 32px 48px}
 .line{height:1px;background:rgba(255,255,255,0.06);margin-bottom:28px}
 .sh{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px}
@@ -78,13 +77,20 @@ input,button{font-family:inherit}
 .btn-o{background:rgba(255,255,255,0.06);color:rgba(255,255,255,0.65);border:1px solid rgba(255,255,255,0.13);padding:8px 15px;border-radius:8px;font-size:12px;font-weight:600;cursor:pointer;transition:all .2s;min-height:36px}
 .btn-o:hover{background:rgba(255,255,255,0.1);border-color:rgba(255,255,255,0.22)}
 .btn-g{background:rgba(255,255,255,0.04);color:rgba(255,255,255,0.35);border:1px solid rgba(255,255,255,0.08);padding:8px 13px;border-radius:8px;font-size:12px;cursor:pointer;min-height:36px}
+.btn-sm{background:rgba(255,255,255,0.06);color:rgba(255,255,255,0.5);border:1px solid rgba(255,255,255,0.1);padding:5px 10px;border-radius:6px;font-size:10px;font-weight:600;cursor:pointer;transition:all .2s}
+.btn-sm:hover{background:rgba(124,92,240,0.15);color:#A78BFA;border-color:rgba(124,92,240,.3)}
 .fbox{background:rgba(255,255,255,0.05);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.1);border-radius:12px;padding:16px;margin-bottom:14px}
 .frow{display:flex;gap:10px;align-items:flex-end;flex-wrap:wrap}
+.frow+.frow{margin-top:10px}
 .fg{display:flex;flex-direction:column;gap:5px}
 .fl{font-size:10px;font-weight:700;letter-spacing:.1em;color:rgba(255,255,255,0.3);text-transform:uppercase}
 .fi{background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.11);border-radius:8px;padding:10px 12px;font-size:13px;color:white;outline:none;transition:all .2s;width:100%;min-height:40px}
 .fi::placeholder{color:rgba(255,255,255,0.22)}
 .fi:focus{border-color:rgba(124,92,240,.55);background:rgba(124,92,240,.07);box-shadow:0 0 0 3px rgba(124,92,240,.1)}
+input[type="date"].fi{color-scheme:dark}
+input[type="date"].fi::-webkit-calendar-picker-indicator{filter:invert(.5);cursor:pointer;opacity:.7}
+
+/* Competition cards */
 .cgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px;margin-bottom:32px}
 .ccard{background:rgba(255,255,255,0.05);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.09);border-radius:16px;padding:18px;transition:all .25s;position:relative;overflow:hidden}
 .ccard:hover{background:rgba(255,255,255,0.08);border-color:rgba(255,255,255,0.16);transform:translateY(-3px);box-shadow:0 12px 40px rgba(0,0,0,.3)}
@@ -95,8 +101,11 @@ input,button{font-family:inherit}
 .smt{display:flex;justify-content:space-between;font-size:11px;font-weight:600}
 .tags{display:flex;flex-wrap:wrap;gap:4px;margin-top:10px}
 .tag{font-size:10px;padding:2px 8px;border-radius:20px;font-weight:600;background:rgba(52,211,153,0.1);color:#34D399;border:1px solid rgba(52,211,153,0.2)}
+.next-deadline{display:inline-flex;align-items:center;gap:5px;margin-top:10px;font-size:10px;font-weight:700;padding:3px 8px;border-radius:6px;border:1px solid}
 .dbtn{background:none;border:none;color:rgba(255,255,255,0.18);font-size:20px;line-height:1;cursor:pointer;padding:4px;transition:color .15s;flex-shrink:0;min-width:28px;min-height:28px;display:flex;align-items:center;justify-content:center}
 .dbtn:hover{color:rgba(255,80,80,.75)}
+
+/* Table */
 .tw{background:rgba(255,255,255,0.04);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.08);border-radius:16px;overflow:hidden;margin-bottom:32px}
 .tsc{overflow-x:auto;-webkit-overflow-scrolling:touch}
 table{width:100%;border-collapse:collapse;font-size:12px}
@@ -116,6 +125,8 @@ tr:hover td{background:rgba(255,255,255,0.02)}
 .cdis{background:rgba(255,255,255,0.02);color:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.04);cursor:not-allowed}
 tfoot td{background:rgba(255,255,255,0.03);font-weight:700;border-top:1px solid rgba(255,255,255,0.06)}
 .th{padding:9px 16px;border-top:1px solid rgba(255,255,255,0.05);font-size:10px;color:rgba(255,255,255,0.18);letter-spacing:.06em}
+
+/* Members */
 .mgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(185px,1fr));gap:10px}
 .mcard{background:rgba(255,255,255,0.05);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:13px 15px;display:flex;align-items:center;gap:10px;transition:all .2s}
 .mcard:hover{background:rgba(255,255,255,0.08);border-color:rgba(255,255,255,0.15);transform:translateY(-1px)}
@@ -123,59 +134,88 @@ tfoot td{background:rgba(255,255,255,0.03);font-weight:700;border-top:1px solid 
 .ei{font-size:28px;margin-bottom:10px;opacity:.6}
 .et{font-size:13px}
 
-/* ══════════════════════════════
-   RESPONSIVE — Tablet (≤ 768px)
-══════════════════════════════ */
-@media (max-width: 768px) {
-  .hero { grid-template-columns: 1fr; padding: 36px 24px 28px; gap: 24px; }
-  .hero-title { font-size: 23px; }
-  .body { padding: 0 24px 40px; }
-  .cgrid { grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); }
-  .mgrid { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); }
-  .hero-panel { padding: 16px; }
-  .panel-empty { min-height: 100px; flex-direction: row; gap: 16px; }
-  .panel-empty-rings { width: 56px; height: 56px; flex-shrink: 0; }
-  .panel-empty-text { text-align: left; }
-}
+/* ── CALENDAR ── */
+.cal-wrap{background:rgba(255,255,255,0.04);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.08);border-radius:16px;overflow:hidden;margin-bottom:32px}
+.cal-inner{padding:20px}
+.cal-hdr{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px}
+.cal-nav{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);color:rgba(255,255,255,0.7);width:34px;height:34px;border-radius:8px;cursor:pointer;font-size:18px;display:flex;align-items:center;justify-content:center;transition:all .2s;flex-shrink:0}
+.cal-nav:hover{background:rgba(255,255,255,0.12);color:white}
+.cal-month-title{font-size:14px;font-weight:700;color:rgba(255,255,255,0.9);letter-spacing:-0.2px}
+.cal-today-btn{background:rgba(124,92,240,0.15);border:1px solid rgba(124,92,240,0.3);color:#A78BFA;padding:5px 12px;border-radius:6px;font-size:10px;font-weight:700;cursor:pointer;transition:all .2s;letter-spacing:0.06em;text-transform:uppercase}
+.cal-today-btn:hover{background:rgba(124,92,240,0.25)}
+.cal-dh{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;margin-bottom:6px}
+.cal-dh div{text-align:center;font-size:9px;font-weight:700;color:rgba(255,255,255,0.25);letter-spacing:0.08em;text-transform:uppercase;padding:4px 0}
+.cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:4px}
+.cal-cell{border-radius:8px;padding:6px 4px;min-height:50px;cursor:pointer;transition:all .15s;display:flex;flex-direction:column;align-items:center;gap:3px;border:1px solid transparent;position:relative}
+.cal-cell:not(.empty):hover{background:rgba(255,255,255,0.06);border-color:rgba(255,255,255,0.08)}
+.cal-cell.today{background:rgba(124,92,240,0.1);border-color:rgba(124,92,240,0.35)}
+.cal-cell.sel{background:rgba(124,92,240,0.22);border-color:rgba(124,92,240,0.6)}
+.cal-cell.past .cdn{color:rgba(255,255,255,0.28)}
+.cal-cell.empty{cursor:default;pointer-events:none}
+.cdn{font-size:12px;font-weight:600;color:rgba(255,255,255,0.75)}
+.cal-cell.today .cdn{color:#A78BFA;font-weight:800}
+.cal-cell.sel .cdn{color:white;font-weight:800}
+.cdots{display:flex;gap:2px;flex-wrap:wrap;justify-content:center;min-height:8px}
+.ev-dot{width:5px;height:5px;border-radius:50%;flex-shrink:0}
+.cal-legend{display:flex;gap:16px;flex-wrap:wrap;padding:14px 0 0;border-top:1px solid rgba(255,255,255,0.06);margin-top:16px}
+.leg-item{display:flex;align-items:center;gap:6px;font-size:10px;color:rgba(255,255,255,0.4)}
+.leg-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.cal-sel{border-top:1px solid rgba(255,255,255,0.06)}
+.cal-sel-hdr{padding:12px 20px 8px;font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.35)}
+.cal-ev-item{display:flex;align-items:flex-start;gap:10px;padding:10px 20px;border-bottom:1px solid rgba(255,255,255,0.04)}
+.cal-ev-item:last-child{border-bottom:none}
+.cal-empty-note{padding:14px 20px;font-size:12px;color:rgba(255,255,255,0.22);text-align:center}
 
-/* ══════════════════════════════
-   RESPONSIVE — Mobile (≤ 480px)
-══════════════════════════════ */
-@media (max-width: 480px) {
-  .hero { padding: 28px 16px 24px; gap: 20px; }
-  .hero-title { font-size: 20px; }
-  .hero-sub { font-size: 11px; margin-bottom: 20px; }
-  .eyebrow { font-size: 9px; }
-  .stat-item { padding: 0 14px 0 0; margin-right: 14px; }
-  .sv { font-size: 18px; }
-  .body { padding: 0 16px 32px; }
-  .line { margin-bottom: 20px; }
-  .sh { flex-wrap: wrap; gap: 10px; }
-  .st { flex: 1 1 100%; }
-  .btn-p, .btn-o { width: 100%; justify-content: center; padding: 11px 16px; font-size: 13px; }
-  .cgrid { grid-template-columns: 1fr; }
-  .mgrid { grid-template-columns: 1fr 1fr; }
-  .frow { flex-direction: column; }
-  .frow .fg { width: 100% !important; min-width: unset !important; }
-  .frow > div:last-child { width: 100%; flex-direction: column; }
-  .frow > div:last-child button { width: 100%; justify-content: center; }
-  .ccard { padding: 14px; }
-  td, th { padding: 10px 10px; }
-  .hero-panel { display: none; }
-  .panel-footer { flex-direction: column; gap: 4px; }
-  .empty { padding: 28px 20px; }
+/* ══ Responsive ══ */
+@media(max-width:768px){
+  .hero{grid-template-columns:1fr;padding:36px 24px 28px;gap:24px}
+  .hero-title{font-size:23px}
+  .body{padding:0 24px 40px}
+  .cgrid{grid-template-columns:repeat(auto-fill,minmax(200px,1fr))}
+  .mgrid{grid-template-columns:repeat(auto-fill,minmax(160px,1fr))}
+  .hero-panel{padding:16px}
+  .panel-empty{min-height:100px;flex-direction:row;gap:16px}
+  .panel-empty-rings{width:56px;height:56px;flex-shrink:0}
+  .panel-empty-text{text-align:left}
+  .cal-cell{min-height:42px;padding:5px 3px}
+  .cdn{font-size:11px}
 }
-
-/* ══════════════════════════════
-   RESPONSIVE — Small mobile (≤ 360px)
-══════════════════════════════ */
-@media (max-width: 360px) {
-  .hero { padding: 24px 14px 20px; }
-  .hero-title { font-size: 18px; }
-  .body { padding: 0 14px 28px; }
-  .mgrid { grid-template-columns: 1fr; }
-  .stat-item { padding: 0 10px 0 0; margin-right: 10px; }
-  .sv { font-size: 16px; }
+@media(max-width:480px){
+  .hero{padding:28px 16px 24px;gap:20px}
+  .hero-title{font-size:20px}
+  .hero-sub{font-size:11px;margin-bottom:20px}
+  .eyebrow{font-size:9px}
+  .stat-item{padding:0 14px 0 0;margin-right:14px}
+  .sv{font-size:18px}
+  .body{padding:0 16px 32px}
+  .line{margin-bottom:20px}
+  .sh{flex-wrap:wrap;gap:10px}
+  .st{flex:1 1 100%}
+  .btn-p,.btn-o{width:100%;justify-content:center;padding:11px 16px;font-size:13px}
+  .cgrid{grid-template-columns:1fr}
+  .mgrid{grid-template-columns:1fr 1fr}
+  .frow{flex-direction:column}
+  .frow .fg{width:100%!important;min-width:unset!important}
+  .frow>div:last-child{width:100%;flex-direction:column}
+  .frow>div:last-child button{width:100%;justify-content:center}
+  .ccard{padding:14px}
+  td,th{padding:10px 10px}
+  .hero-panel{display:none}
+  .empty{padding:28px 20px}
+  .cal-cell{min-height:38px;padding:4px 2px;border-radius:6px}
+  .cdn{font-size:10px}
+  .ev-dot{width:4px;height:4px}
+  .cal-legend{gap:10px}
+  .cal-inner{padding:14px}
+  .cal-hdr{margin-bottom:14px}
+}
+@media(max-width:360px){
+  .hero{padding:24px 14px 20px}
+  .hero-title{font-size:18px}
+  .body{padding:0 14px 28px}
+  .mgrid{grid-template-columns:1fr}
+  .stat-item{padding:0 10px 0 0;margin-right:10px}
+  .sv{font-size:16px}
 }
 </style>
 </head>
@@ -190,9 +230,7 @@ tfoot td{background:rgba(255,255,255,0.03);font-weight:700;border-top:1px solid 
   <div class="loading-text">Menghubungkan ke database...</div>
 </div>
 
-<div class="bg">
-  <div class="orb o1"></div><div class="orb o2"></div><div class="orb o3"></div>
-</div>
+<div class="bg"><div class="orb o1"></div><div class="orb o2"></div><div class="orb o3"></div></div>
 
 <div class="page" id="app" style="opacity:0;transition:opacity .4s">
   <div class="hero">
@@ -219,21 +257,41 @@ tfoot td{background:rgba(255,255,255,0.03);font-weight:700;border-top:1px solid 
   <div class="body">
     <div class="line"></div>
 
+    <!-- Lomba -->
     <div style="margin-bottom:32px">
       <div class="sh">
         <span class="st">Daftar Lomba</span>
         <button class="btn-p" onclick="tf('cf')">+ Tambah Lomba</button>
       </div>
       <div class="fbox" id="cf" style="display:none">
+        <!-- Row 1: nama + maks -->
         <div class="frow">
           <div class="fg" style="flex:2;min-width:180px">
             <label class="fl">Nama Lomba</label>
             <input class="fi" id="cn" placeholder="Contoh: ENFICTION IV 2026" onkeydown="if(event.key==='Enter')sc2()">
           </div>
-          <div class="fg" style="min-width:95px">
+          <div class="fg" style="min-width:90px">
             <label class="fl">Maks. Peserta</label>
             <input class="fi" id="cm" type="number" min="1" max="20" value="3">
           </div>
+        </div>
+        <!-- Row 2: tanggal -->
+        <div class="frow">
+          <div class="fg" style="flex:1;min-width:130px">
+            <label class="fl" style="color:#60A5FA">📅 Deadline Daftar</label>
+            <input class="fi" id="c-dd" type="date">
+          </div>
+          <div class="fg" style="flex:1;min-width:130px">
+            <label class="fl" style="color:#A78BFA">📅 Deadline Submit</label>
+            <input class="fi" id="c-ds" type="date">
+          </div>
+          <div class="fg" style="flex:1;min-width:130px">
+            <label class="fl" style="color:#34D399">📅 Pengumuman</label>
+            <input class="fi" id="c-dp" type="date">
+          </div>
+        </div>
+        <!-- Row 3: aksi -->
+        <div class="frow" style="margin-top:4px">
           <div style="display:flex;gap:8px;padding-bottom:1px">
             <button class="btn-p" onclick="sc2()">Simpan</button>
             <button class="btn-g" onclick="tf('cf')">Batal</button>
@@ -243,6 +301,7 @@ tfoot td{background:rgba(255,255,255,0.03);font-weight:700;border-top:1px solid 
       <div class="cgrid" id="cl"></div>
     </div>
 
+    <!-- Tabel distribusi -->
     <div id="ts" style="display:none;margin-bottom:32px">
       <div class="sh"><span class="st">Distribusi Tim</span></div>
       <div class="tw">
@@ -251,6 +310,34 @@ tfoot td{background:rgba(255,255,255,0.03);font-weight:700;border-top:1px solid 
       </div>
     </div>
 
+    <!-- Kalender -->
+    <div style="margin-bottom:32px">
+      <div class="sh"><span class="st">Kalender Event</span></div>
+      <div class="cal-wrap">
+        <div class="cal-inner">
+          <div class="cal-hdr">
+            <button class="cal-nav" onclick="window.prevMonth()">‹</button>
+            <div style="display:flex;align-items:center;gap:10px">
+              <span class="cal-month-title" id="cal-month"></span>
+              <button class="cal-today-btn" onclick="window.goToday()">Hari ini</button>
+            </div>
+            <button class="cal-nav" onclick="window.nextMonth()">›</button>
+          </div>
+          <div class="cal-dh">
+            <div>Min</div><div>Sen</div><div>Sel</div><div>Rab</div><div>Kam</div><div>Jum</div><div>Sab</div>
+          </div>
+          <div class="cal-grid" id="cal-grid"></div>
+          <div class="cal-legend">
+            <div class="leg-item"><div class="leg-dot" style="background:#60A5FA"></div><span>Deadline Daftar</span></div>
+            <div class="leg-item"><div class="leg-dot" style="background:#A78BFA"></div><span>Deadline Submit</span></div>
+            <div class="leg-item"><div class="leg-dot" style="background:#34D399"></div><span>Pengumuman</span></div>
+          </div>
+        </div>
+        <div class="cal-sel" id="cal-sel"></div>
+      </div>
+    </div>
+
+    <!-- Anggota -->
     <div>
       <div class="sh">
         <span class="st">Anggota Tim</span>
@@ -294,85 +381,182 @@ const DOC = doc(db, 'tcmc', 'data');
 let C = [], M = [], A = [];
 const gid = () => Math.random().toString(36).slice(2) + Date.now().toString(36);
 
-function setSyncStatus(s, t) {
-  document.getElementById('sync-badge').className = 'sync-badge sync-' + s;
+// ── Calendar state ──
+let calYear = new Date().getFullYear();
+let calMonth = new Date().getMonth();
+let selDate = null;
+
+const MONTHS_ID  = ['Januari','Februari','Maret','April','Mei','Juni','Juli','Agustus','September','Oktober','November','Desember'];
+const MONTHS_SH  = ['Jan','Feb','Mar','Apr','Mei','Jun','Jul','Agu','Sep','Okt','Nov','Des'];
+
+// ── Helpers ──
+const today = () => new Date().toISOString().split('T')[0];
+
+function fmtDate(d) {
+  if (!d) return '';
+  const [y,m,day] = d.split('-');
+  return `${parseInt(day)} ${MONTHS_SH[parseInt(m)-1]}`;
+}
+
+function getAllEvents() {
+  const ev = {};
+  C.forEach(c => {
+    [
+      {key:'deadline_daftar', col:'#60A5FA', label:'Deadline Daftar'},
+      {key:'deadline_submit', col:'#A78BFA', label:'Deadline Submit'},
+      {key:'pengumuman',      col:'#34D399', label:'Pengumuman'}
+    ].forEach(({key,col,label}) => {
+      if (c[key]) {
+        if (!ev[c[key]]) ev[c[key]] = [];
+        ev[c[key]].push({title: c.title, color: col, label});
+      }
+    });
+  });
+  return ev;
+}
+
+function getNextDeadline(c) {
+  const td = today();
+  return [
+    {date: c.deadline_daftar, label:'Daftar',      color:'#60A5FA'},
+    {date: c.deadline_submit, label:'Submit',      color:'#A78BFA'},
+    {date: c.pengumuman,      label:'Pengumuman',  color:'#34D399'}
+  ].filter(d => d.date && d.date >= td)
+   .sort((a,b) => a.date.localeCompare(b.date))[0] || null;
+}
+
+const slotColor = (f,mx) => { const p=f/mx; return p>=1?'#FF6B6B':p>=.67?'#FBBF24':'#34D399'; };
+const slotGlow  = (f,mx) => { const p=f/mx; return p>=1?'rgba(255,107,107,.4)':p>=.67?'rgba(251,191,36,.35)':'rgba(52,211,153,.3)'; };
+const cc = id => A.filter(a => a.c===id).length;
+const cm = id => A.filter(a => a.m===id).length;
+const ia = (m,c) => A.some(a => a.m===m && a.c===c);
+
+// ── Sync ──
+function setSyncStatus(s,t) {
+  document.getElementById('sync-badge').className = 'sync-badge sync-'+s;
   document.getElementById('sync-text').textContent = t;
 }
 
 async function init() {
   try {
     const snap = await getDoc(DOC);
-    if (snap.exists()) { const d = snap.data(); C = d.competitions||[]; M = d.members||[]; A = d.assignments||[]; }
-    document.getElementById('loading').style.opacity = '0';
-    setTimeout(() => document.getElementById('loading').style.display = 'none', 500);
-    document.getElementById('app').style.opacity = '1';
-    setSyncStatus('ok', 'Tersinkronisasi');
+    if (snap.exists()) { const d=snap.data(); C=d.competitions||[]; M=d.members||[]; A=d.assignments||[]; }
+    document.getElementById('loading').style.opacity='0';
+    setTimeout(()=>document.getElementById('loading').style.display='none',500);
+    document.getElementById('app').style.opacity='1';
+    setSyncStatus('ok','Tersinkronisasi');
     render();
     onSnapshot(DOC, snap => {
       if (snap.exists() && !snap.metadata.hasPendingWrites) {
-        const d = snap.data(); C = d.competitions||[]; M = d.members||[]; A = d.assignments||[];
-        render(); setSyncStatus('ok', 'Tersinkronisasi');
+        const d=snap.data(); C=d.competitions||[]; M=d.members||[]; A=d.assignments||[];
+        render(); setSyncStatus('ok','Tersinkronisasi');
       }
     });
   } catch(e) {
-    C = JSON.parse(localStorage.getItem('cmc_c')||'[]');
-    M = JSON.parse(localStorage.getItem('cmc_m')||'[]');
-    A = JSON.parse(localStorage.getItem('cmc_a')||'[]');
-    document.getElementById('loading').style.display = 'none';
-    document.getElementById('app').style.opacity = '1';
-    setSyncStatus('err', 'Offline — cek Firestore');
+    C=JSON.parse(localStorage.getItem('cmc_c')||'[]');
+    M=JSON.parse(localStorage.getItem('cmc_m')||'[]');
+    A=JSON.parse(localStorage.getItem('cmc_a')||'[]');
+    document.getElementById('loading').style.display='none';
+    document.getElementById('app').style.opacity='1';
+    setSyncStatus('err','Offline — cek Firestore');
     render();
   }
 }
 
 async function sa() {
-  setSyncStatus('ing', 'Menyimpan...');
+  setSyncStatus('ing','Menyimpan...');
   try {
-    await setDoc(DOC, { competitions: C, members: M, assignments: A });
-    localStorage.setItem('cmc_c', JSON.stringify(C));
-    localStorage.setItem('cmc_m', JSON.stringify(M));
-    localStorage.setItem('cmc_a', JSON.stringify(A));
-    setSyncStatus('ok', 'Tersinkronisasi');
+    await setDoc(DOC,{competitions:C,members:M,assignments:A});
+    localStorage.setItem('cmc_c',JSON.stringify(C));
+    localStorage.setItem('cmc_m',JSON.stringify(M));
+    localStorage.setItem('cmc_a',JSON.stringify(A));
+    setSyncStatus('ok','Tersinkronisasi');
   } catch(e) {
-    setSyncStatus('err', 'Gagal menyimpan');
-    localStorage.setItem('cmc_c', JSON.stringify(C));
-    localStorage.setItem('cmc_m', JSON.stringify(M));
-    localStorage.setItem('cmc_a', JSON.stringify(A));
+    setSyncStatus('err','Gagal menyimpan');
+    localStorage.setItem('cmc_c',JSON.stringify(C));
+    localStorage.setItem('cmc_m',JSON.stringify(M));
+    localStorage.setItem('cmc_a',JSON.stringify(A));
   }
 }
 
-const cc = id => A.filter(a => a.c === id).length;
-const cm = id => A.filter(a => a.m === id).length;
-const ia = (m,c) => A.some(a => a.m === m && a.c === c);
-const slotColor = (f,mx) => { const p=f/mx; return p>=1?'#FF6B6B':p>=.67?'#FBBF24':'#34D399'; };
-const slotGlow  = (f,mx) => { const p=f/mx; return p>=1?'rgba(255,107,107,.4)':p>=.67?'rgba(251,191,36,.35)':'rgba(52,211,153,.3)'; };
+// ── Calendar render ──
+function renderCalendar() {
+  const evMap = getAllEvents();
+  const td    = today();
+  document.getElementById('cal-month').textContent = `${MONTHS_ID[calMonth]} ${calYear}`;
 
+  const firstDay    = new Date(calYear, calMonth, 1).getDay();
+  const daysInMonth = new Date(calYear, calMonth+1, 0).getDate();
+
+  let html = '';
+  for (let i=0; i<firstDay; i++) html += `<div class="cal-cell empty"></div>`;
+
+  for (let d=1; d<=daysInMonth; d++) {
+    const ds   = `${calYear}-${String(calMonth+1).padStart(2,'0')}-${String(d).padStart(2,'0')}`;
+    const isT  = ds === td;
+    const isSel= ds === selDate;
+    const isPast = ds < td;
+    const evs  = evMap[ds] || [];
+    const dots = evs.map(e => `<div class="ev-dot" style="background:${e.color};${isPast?'opacity:.35':''}"></div>`).join('');
+
+    html += `<div class="cal-cell${isT?' today':''}${isSel?' sel':''}${isPast?' past':''}" onclick="window.selDay('${ds}')">
+      <span class="cdn">${d}</span>
+      <div class="cdots">${dots}</div>
+    </div>`;
+  }
+  document.getElementById('cal-grid').innerHTML = html;
+  renderSelDay(evMap, td);
+}
+
+function renderSelDay(evMap, td) {
+  const ce = document.getElementById('cal-sel');
+  if (!selDate) { ce.innerHTML=''; return; }
+
+  const evs = evMap[selDate] || [];
+  const [y,m,d] = selDate.split('-');
+  const isPast = selDate < td;
+
+  if (!evs.length) {
+    ce.innerHTML = `<div class="cal-empty-note">Tidak ada event pada tanggal ini</div>`;
+    return;
+  }
+
+  ce.innerHTML = `
+    <div class="cal-sel-hdr">
+      ${parseInt(d)} ${MONTHS_ID[parseInt(m)-1]} ${y}
+      ${isPast ? '<span style="color:#FF6B6B;font-weight:700;margin-left:6px">· Sudah lewat</span>' : ''}
+    </div>
+    ${evs.map(e=>`<div class="cal-ev-item">
+      <div style="width:8px;height:8px;border-radius:50%;background:${e.color};flex-shrink:0;margin-top:3px"></div>
+      <div>
+        <div style="font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:${e.color};margin-bottom:2px">${e.label}</div>
+        <div style="font-size:13px;font-weight:600;color:rgba(255,255,255,.85)">${e.title}</div>
+      </div>
+    </div>`).join('')}`;
+}
+
+// ── Main render ──
 function render() {
-  const tot = A.length, mxs = C.reduce((s,c) => s+c.max, 0);
+  const tot = A.length, mxs = C.reduce((s,c)=>s+c.max,0);
   document.getElementById('sc').textContent = C.length;
   document.getElementById('sm').textContent = M.length;
   document.getElementById('ss').textContent = `${tot}/${mxs}`;
 
-  // Panel kanan
+  // Hero panel
   const pb = document.getElementById('panel-body');
   if (!C.length) {
     pb.innerHTML = `<div class="panel-empty">
-      <div class="panel-empty-rings">
-        <div class="ring ring1"></div><div class="ring ring2"></div>
-        <div class="ring ring3"></div><div class="ring-center"></div>
-      </div>
+      <div class="panel-empty-rings"><div class="ring ring1"></div><div class="ring ring2"></div><div class="ring ring3"></div><div class="ring-center"></div></div>
       <div class="panel-empty-text">Tambahkan lomba untuk<br>melihat overview di sini</div>
     </div>`;
   } else {
-    const rows = C.map(c => {
+    pb.innerHTML = C.map(c => {
       const f=cc(c.id), p=Math.min(f/c.max,1), col=slotColor(f,c.max), gl=slotGlow(f,c.max);
-      const t = c.title.length>22 ? c.title.substring(0,22)+'…' : c.title;
       return `<div class="panel-row">
-        <div class="pr-header"><span class="pr-name">${t}</span><span class="pr-count" style="color:${col}">${f}/${c.max}</span></div>
+        <div class="pr-header"><span class="pr-name">${c.title.length>22?c.title.substring(0,22)+'…':c.title}</span><span class="pr-count" style="color:${col}">${f}/${c.max}</span></div>
         <div class="pr-track"><div class="pr-bar" style="width:${p*100}%;background:${col};box-shadow:0 0 6px ${gl}"></div></div>
       </div>`;
-    }).join('');
-    pb.innerHTML = rows + `<div class="panel-footer">
+    }).join('') + `<div class="panel-footer">
       <div>Terisi <span>${mxs>0?Math.round((tot/mxs)*100):0}%</span></div>
       <div>Sisa slot <span>${mxs-tot}</span></div>
     </div>`;
@@ -386,7 +570,11 @@ function render() {
     cl.innerHTML = C.map(c => {
       const f=cc(c.id), p=Math.min(f/c.max,1), col=slotColor(f,c.max), gl=slotGlow(f,c.max);
       const st = f>=c.max?'Penuh':`${c.max-f} slot tersisa`;
-      const mems = M.filter(m => ia(m.id,c.id));
+      const mems = M.filter(m=>ia(m.id,c.id));
+      const next = getNextDeadline(c);
+      const nextBadge = next
+        ? `<div class="next-deadline" style="color:${next.color};border-color:${next.color}30;background:${next.color}10">⏱ ${next.label}: ${fmtDate(next.date)}</div>`
+        : '';
       return `<div class="ccard">
         <div style="position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,${col},transparent);box-shadow:0 1px 8px ${gl}"></div>
         <div style="display:flex;justify-content:space-between;align-items:flex-start">
@@ -395,46 +583,50 @@ function render() {
         </div>
         <div class="str"><div class="sb" style="width:${p*100}%;background:${col};box-shadow:0 0 8px ${gl}"></div></div>
         <div class="smt"><span style="color:${col}">${st}</span><span style="color:rgba(255,255,255,0.28)">${f}/${c.max}</span></div>
+        ${nextBadge}
         ${mems.length?`<div class="tags">${mems.map(m=>`<span class="tag">${m.name}</span>`).join('')}</div>`:''}
       </div>`;
     }).join('');
   }
 
-  // Tabel distribusi
+  // Tabel
   const tse = document.getElementById('ts');
   if (C.length>0 && M.length>0) {
-    tse.style.display = 'block';
-    const ths = C.map(c => {
-      const f=cc(c.id), col=slotColor(f,c.max);
-      const t = c.title.length>14 ? c.title.substring(0,14)+'…' : c.title;
+    tse.style.display='block';
+    const ths = C.map(c=>{
+      const f=cc(c.id),col=slotColor(f,c.max);
+      const t=c.title.length>14?c.title.substring(0,14)+'…':c.title;
       return `<th>${t}<br><span style="font-weight:700;color:${col};font-size:9px;letter-spacing:0">${f}/${c.max}</span></th>`;
     }).join('');
-    const rows = M.map(m => {
-      const cells = C.map(c => {
-        const on=ia(m.id,c.id), full=cc(c.id)>=c.max&&!on;
-        const cls = on?'cb con':full?'cb cdis':'cb coff';
+    const rows = M.map(m=>{
+      const cells=C.map(c=>{
+        const on=ia(m.id,c.id),full=cc(c.id)>=c.max&&!on;
+        const cls=on?'cb con':full?'cb cdis':'cb coff';
         return `<td><button class="${cls}" ${full?'disabled':''} onclick="window._ta('${m.id}','${c.id}')">${on?'✓':'·'}</button></td>`;
       }).join('');
-      const cnt = cm(m.id);
+      const cnt=cm(m.id);
       return `<tr><td class="tl"><div style="display:flex;align-items:center;gap:9px">
         <div class="av">${m.name.charAt(0).toUpperCase()}</div>
         <div><div class="mn2">${m.name}</div><div class="mc">${cnt} lomba</div></div>
       </div></td>${cells}<td><span style="font-weight:800;font-size:13px;color:${cnt>0?'#A78BFA':'rgba(255,255,255,0.18)'}">${cnt}</span></td></tr>`;
     }).join('');
-    const fc = C.map(c => { const f=cc(c.id); return `<td style="color:${slotColor(f,c.max)}">${f}/${c.max}</td>`; }).join('');
-    document.getElementById('dt').innerHTML = `
+    const fc=C.map(c=>{const f=cc(c.id);return `<td style="color:${slotColor(f,c.max)}">${f}/${c.max}</td>`;}).join('');
+    document.getElementById('dt').innerHTML=`
       <thead><tr><th class="tl">Anggota</th>${ths}<th>Total</th></tr></thead>
       <tbody>${rows}</tbody>
       <tfoot><tr><td class="tl" style="font-size:9px;letter-spacing:.1em;color:rgba(255,255,255,0.25)">Terisi</td>${fc}<td style="color:#A78BFA">${A.length}</td></tr></tfoot>`;
-  } else { tse.style.display = 'none'; }
+  } else { tse.style.display='none'; }
+
+  // Kalender
+  renderCalendar();
 
   // Members
-  const ml = document.getElementById('ml');
+  const ml=document.getElementById('ml');
   if (!M.length) {
-    ml.innerHTML = `<div class="empty" style="grid-column:1/-1"><div class="ei">👥</div><div class="et">Belum ada anggota tim — tambahkan sekarang!</div></div>`;
+    ml.innerHTML=`<div class="empty" style="grid-column:1/-1"><div class="ei">👥</div><div class="et">Belum ada anggota tim — tambahkan sekarang!</div></div>`;
   } else {
-    ml.innerHTML = M.map(m => {
-      const cnt = cm(m.id);
+    ml.innerHTML=M.map(m=>{
+      const cnt=cm(m.id);
       return `<div class="mcard">
         <div class="av">${m.name.charAt(0).toUpperCase()}</div>
         <div style="flex:1;min-width:0"><div class="mn2" style="font-size:13px">${m.name}</div><div class="mc">${cnt} lomba aktif</div></div>
@@ -444,31 +636,45 @@ function render() {
   }
 }
 
-// Expose ke window (required untuk type="module" + inline onclick)
+// ── Expose ke window ──
 window.tf = id => {
-  const f = document.getElementById(id);
-  f.style.display = f.style.display==='none' ? 'block' : 'none';
-  if (f.style.display==='block') { const i=f.querySelector('input'); if(i) i.focus(); }
+  const f=document.getElementById(id);
+  f.style.display=f.style.display==='none'?'block':'none';
+  if(f.style.display==='block'){const i=f.querySelector('input');if(i)i.focus();}
 };
 window.sc2 = () => {
-  const t=document.getElementById('cn').value.trim(), mx=parseInt(document.getElementById('cm').value)||3;
-  if (!t) return;
-  C.push({id:gid(),title:t,max:mx}); sa();
-  document.getElementById('cn').value=''; document.getElementById('cm').value='3';
-  document.getElementById('cf').style.display='none'; render();
+  const t=document.getElementById('cn').value.trim();
+  const mx=parseInt(document.getElementById('cm').value)||3;
+  if(!t) return;
+  C.push({
+    id:gid(), title:t, max:mx,
+    deadline_daftar: document.getElementById('c-dd').value||'',
+    deadline_submit: document.getElementById('c-ds').value||'',
+    pengumuman:      document.getElementById('c-dp').value||''
+  });
+  sa();
+  ['cn','c-dd','c-ds','c-dp'].forEach(id=>document.getElementById(id).value='');
+  document.getElementById('cm').value='3';
+  document.getElementById('cf').style.display='none';
+  render();
 };
 window._dc = id => { C=C.filter(c=>c.id!==id); A=A.filter(a=>a.c!==id); sa(); render(); };
 window.sm2 = () => {
   const n=document.getElementById('mnn').value.trim(); if(!n) return;
   M.push({id:gid(),name:n}); sa();
-  document.getElementById('mnn').value=''; document.getElementById('mf').style.display='none'; render();
+  document.getElementById('mnn').value='';
+  document.getElementById('mf').style.display='none'; render();
 };
 window._dm = id => { M=M.filter(m=>m.id!==id); A=A.filter(a=>a.m!==id); sa(); render(); };
 window._ta = (mid,cid) => {
-  if (ia(mid,cid)) { A=A.filter(a=>!(a.m===mid&&a.c===cid)); }
-  else { const comp=C.find(c=>c.id===cid); if(cc(cid)>=comp.max) return; A.push({m:mid,c:cid}); }
+  if(ia(mid,cid)){A=A.filter(a=>!(a.m===mid&&a.c===cid));}
+  else{const comp=C.find(c=>c.id===cid);if(cc(cid)>=comp.max)return;A.push({m:mid,c:cid});}
   sa(); render();
 };
+window.prevMonth = () => { calMonth--; if(calMonth<0){calMonth=11;calYear--;} renderCalendar(); };
+window.nextMonth = () => { calMonth++; if(calMonth>11){calMonth=0;calYear++;} renderCalendar(); };
+window.goToday   = () => { const n=new Date(); calYear=n.getFullYear(); calMonth=n.getMonth(); selDate=today(); renderCalendar(); };
+window.selDay    = d  => { selDate=selDate===d?null:d; renderCalendar(); };
 
 init();
 </script>
