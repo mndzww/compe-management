@@ -2,12 +2,12 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>TCMC — Competition Hub</title>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-html,body{height:100%;overflow:hidden}
-body{font-family:-apple-system,'Inter','Segoe UI',sans-serif;background:#07091A;color:white}
+html,body{height:100%}
+body{font-family:-apple-system,'Inter','Segoe UI',sans-serif;background:#07091A;color:white;overflow:hidden}
 input,button,textarea{font-family:inherit}
 button{cursor:pointer}
 
@@ -54,17 +54,9 @@ button{cursor:pointer}
 /* ─── CINEMATIC SLIDE VIEW ─── */
 #v-slides{flex-direction:row}
 .slide-area{flex:1;min-width:0;position:relative;overflow:hidden}
-
-/* Slide wrapper (animated) */
 .slide-wrap{position:absolute;inset:0;display:flex;align-items:stretch;transition:opacity .35s ease,transform .35s cubic-bezier(.4,0,.2,1)}
-
-/* Slide BG gradient */
 .slide-grad{position:absolute;inset:0;z-index:0;transition:background .6s ease}
-
-/* Noise overlay for cinematic feel */
 .slide-noise{position:absolute;inset:0;z-index:1;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");opacity:.4;pointer-events:none}
-
-/* Slide content (above bg) */
 .slide-content{position:absolute;inset:0;z-index:2;display:flex}
 
 /* LEFT ─ big cinematic content */
@@ -75,16 +67,12 @@ button{cursor:pointer}
 .sl-urgent{font-size:10px;font-weight:700;padding:4px 10px;border-radius:20px;border:1px solid}
 .sl-title{font-size:clamp(28px,4vw,52px);font-weight:800;line-height:1.1;letter-spacing:-.8px;color:white;margin-bottom:10px;max-width:520px}
 .sl-org{font-size:13px;color:rgba(255,255,255,.35);margin-bottom:auto}
-
-/* Slot display */
 .sl-slot-area{display:flex;align-items:center;gap:28px;margin:28px 0 20px}
 .sl-ring{flex-shrink:0}
 .sl-slot-info{display:flex;flex-direction:column;gap:6px}
 .sl-slot-frac{font-size:clamp(48px,6vw,80px);font-weight:800;line-height:1;letter-spacing:-3px}
 .sl-slot-lbl{font-size:11px;color:rgba(255,255,255,.35);text-transform:uppercase;letter-spacing:.1em;font-weight:700}
 .sl-slot-status{font-size:12px;font-weight:600}
-
-/* Nav row */
 .sl-nav{display:flex;align-items:center;gap:14px;margin-top:auto}
 .nav-arrow{width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);color:rgba(255,255,255,.7);font-size:18px;display:flex;align-items:center;justify-content:center;transition:all .18s;flex-shrink:0}
 .nav-arrow:hover{background:rgba(255,255,255,.15);color:white;transform:scale(1.05)}
@@ -151,16 +139,17 @@ button{cursor:pointer}
 .fab:hover~.fab-label{opacity:1}
 
 /* ─── MODAL ─── */
-.modal-bg{position:fixed;inset:0;background:rgba(7,9,26,.7);backdrop-filter:blur(8px);z-index:400;display:none;align-items:center;justify-content:center;padding:20px}
+.modal-bg{position:fixed;inset:0;background:rgba(7,9,26,.7);backdrop-filter:blur(8px);z-index:400;display:none;align-items:flex-end;justify-content:center;padding:0}
 .modal-bg.open{display:flex}
-.modal{background:rgba(20,24,44,.95);border:1px solid rgba(255,255,255,.12);border-radius:18px;padding:24px;width:100%;max-width:520px;box-shadow:0 32px 80px rgba(0,0,0,.5)}
-.modal-title{font-size:17px;font-weight:800;margin-bottom:18px;display:flex;align-items:center;gap:10px}
-.modal-close{margin-left:auto;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);color:rgba(255,255,255,.5);width:30px;height:30px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:16px;transition:all .15s}
+.modal{background:rgba(20,24,44,.98);border:1px solid rgba(255,255,255,.12);border-radius:20px 20px 0 0;padding:20px 20px calc(20px + env(safe-area-inset-bottom));width:100%;max-width:100%;box-shadow:0 -16px 60px rgba(0,0,0,.6)}
+.modal-drag{width:36px;height:4px;border-radius:2px;background:rgba(255,255,255,.12);margin:0 auto 16px}
+.modal-title{font-size:16px;font-weight:800;margin-bottom:16px;display:flex;align-items:center;gap:10px}
+.modal-close{margin-left:auto;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);color:rgba(255,255,255,.5);width:30px;height:30px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:16px;transition:all .15s;flex-shrink:0}
 .modal-close:hover{background:rgba(255,107,107,.12);color:#FF6B6B;border-color:rgba(255,107,107,.2)}
 .frow{display:flex;gap:8px;align-items:flex-end;flex-wrap:wrap;margin-bottom:10px}
 .fg{display:flex;flex-direction:column;gap:5px}
 .fl{font-size:9px;font-weight:700;letter-spacing:.1em;color:rgba(255,255,255,.3);text-transform:uppercase}
-.fi{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:8px;padding:9px 12px;font-size:13px;color:white;outline:none;transition:all .2s;width:100%;min-height:38px}
+.fi{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.11);border-radius:10px;padding:11px 14px;font-size:14px;color:white;outline:none;transition:all .2s;width:100%;min-height:44px}
 .fi::placeholder{color:rgba(255,255,255,.2)}
 .fi:focus{border-color:rgba(124,92,240,.5);background:rgba(124,92,240,.08);box-shadow:0 0 0 3px rgba(124,92,240,.1)}
 input[type="date"].fi{color-scheme:dark}
@@ -183,7 +172,7 @@ input[type="date"].fi::-webkit-calendar-picker-indicator{filter:invert(.5);opaci
 .cal-box{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:14px;overflow:hidden}
 .cal-inner{padding:20px}
 .cal-hdr{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}
-.cal-nav{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.09);color:rgba(255,255,255,.6);width:30px;height:30px;border-radius:7px;font-size:18px;display:flex;align-items:center;justify-content:center;transition:all .15s}
+.cal-nav{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.09);color:rgba(255,255,255,.6);width:32px;height:32px;border-radius:8px;font-size:18px;display:flex;align-items:center;justify-content:center;transition:all .15s}
 .cal-nav:hover{background:rgba(255,255,255,.12);color:white}
 .cal-month{font-size:13px;font-weight:700;color:rgba(255,255,255,.88)}
 .cal-today-b{background:rgba(124,92,240,.15);border:1px solid rgba(124,92,240,.28);color:#A78BFA;padding:4px 10px;border-radius:6px;font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.08em}
@@ -216,7 +205,7 @@ td.tl{text-align:left}
 tr:last-child td{border-bottom:none}
 tr:hover td{background:rgba(255,255,255,.02)}
 .t-av{width:28px;height:28px;border-radius:50%;background:linear-gradient(135deg,rgba(124,92,240,.5),rgba(56,182,255,.5));display:inline-flex;align-items:center;justify-content:center;font-size:10px;font-weight:800;color:white;border:1px solid rgba(255,255,255,.12)}
-.cb{width:28px;height:28px;border-radius:6px;border:none;display:inline-flex;align-items:center;justify-content:center;font-size:12px;transition:all .15s}
+.cb{width:36px;height:36px;border-radius:8px;border:none;display:inline-flex;align-items:center;justify-content:center;font-size:14px;transition:all .15s}
 .con{background:rgba(34,211,160,.12);color:#22D3A0;font-weight:900;border:1px solid rgba(34,211,160,.22)}
 .coff{background:rgba(255,255,255,.04);color:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.08)}
 .coff:hover{background:rgba(124,92,240,.12);color:#A78BFA;border-color:rgba(124,92,240,.3)}
@@ -235,35 +224,239 @@ tfoot td{background:rgba(255,255,255,.03);font-weight:700;border-top:1px solid r
 .xbtn:hover{color:rgba(255,107,107,.75)}
 
 /* Buttons */
-.btn-p{background:linear-gradient(135deg,#7C5CF0,#4F8EF7);color:white;border:none;padding:9px 18px;border-radius:9px;font-size:12px;font-weight:700;box-shadow:0 4px 18px rgba(124,92,240,.3);transition:all .2s}
+.btn-p{background:linear-gradient(135deg,#7C5CF0,#4F8EF7);color:white;border:none;padding:11px 18px;border-radius:10px;font-size:13px;font-weight:700;box-shadow:0 4px 18px rgba(124,92,240,.3);transition:all .2s;flex:1}
 .btn-p:hover{transform:translateY(-1px);box-shadow:0 6px 24px rgba(124,92,240,.5)}
 .btn-o{background:rgba(255,255,255,.06);color:rgba(255,255,255,.6);border:1px solid rgba(255,255,255,.11);padding:8px 16px;border-radius:9px;font-size:12px;font-weight:600;transition:all .2s}
 .btn-o:hover{background:rgba(255,255,255,.1)}
-.btn-g{background:rgba(255,255,255,.04);color:rgba(255,255,255,.32);border:1px solid rgba(255,255,255,.07);padding:8px 14px;border-radius:9px;font-size:12px}
+.btn-g{background:rgba(255,255,255,.04);color:rgba(255,255,255,.32);border:1px solid rgba(255,255,255,.07);padding:11px 18px;border-radius:10px;font-size:13px}
 .empty-st{background:rgba(255,255,255,.02);border:1.5px dashed rgba(255,255,255,.08);border-radius:12px;padding:36px;text-align:center;color:rgba(255,255,255,.22)}
 
-/* Mobile */
-.mob-nav{display:none;position:fixed;bottom:0;left:0;right:0;background:rgba(7,9,26,.95);border-top:1px solid rgba(255,255,255,.07);backdrop-filter:blur(16px);z-index:300;padding:6px 0 max(6px,env(safe-area-inset-bottom))}
+/* Mobile nav */
+.mob-nav{display:none;position:fixed;bottom:0;left:0;right:0;background:rgba(7,9,26,.95);border-top:1px solid rgba(255,255,255,.07);backdrop-filter:blur(16px);z-index:300;padding:6px 0;padding-bottom:max(6px, env(safe-area-inset-bottom))}
 .mob-items{display:flex;justify-content:space-around}
-.mob-btn{display:flex;flex-direction:column;align-items:center;gap:2px;padding:5px 16px;border:none;background:transparent;color:rgba(255,255,255,.3);font-size:10px;font-weight:600;transition:all .15s}
+.mob-btn{display:flex;flex-direction:column;align-items:center;gap:2px;padding:5px 16px;border:none;background:transparent;color:rgba(255,255,255,.3);font-size:10px;font-weight:600;transition:all .15s;min-width:60px}
 .mob-btn.active{color:#A78BFA}
-.mob-icon{font-size:18px}
-@media(max-width:900px){.slide-right{width:260px}.sl-title{font-size:clamp(22px,3.5vw,40px)}}
+.mob-icon{font-size:20px}
+
+/* ─── TABLET breakpoint ─── */
+@media(max-width:900px){
+  .slide-right{width:260px}
+  .sl-title{font-size:clamp(22px,3.5vw,40px)}
+}
+
+/* ─── MOBILE ─── */
 @media(max-width:700px){
-  body{overflow:auto}html{overflow:auto}
-  .shell{position:relative;top:0;height:auto}
-  .topbar{position:relative}
-  #v-slides.active,.view.active{position:relative;height:auto;min-height:100vh;flex-direction:column}
-  .slide-area{height:100vh}
-  .peek-col{display:none}
-  .slide-right{width:100%;padding:12px 16px;height:auto;border-top:1px solid rgba(255,255,255,.07)}
-  .slide-content{flex-direction:column;overflow-y:auto}
-  .slide-left{padding:28px 20px 16px;min-height:60vh}
+  body{overflow:auto}
+  html{overflow:auto}
+
+  /* Topbar: hide desktop nav, show sync only */
   .tb-nav{display:none}
+  .tb-div{display:none}
+  .sync-b#sync-badge{display:none} /* shown via sync2 in sub-views only */
+  .topbar{padding:0 16px}
+
+  /* Shell becomes scrollable */
+  .shell{position:relative;top:0;height:auto;overflow:visible}
+
+  /* Views */
+  .view{position:relative;height:auto;min-height:calc(100svh - 52px)}
+  .view.active{display:flex}
+  #v-slides.active{
+    flex-direction:column;
+    height:calc(100svh - 52px - 64px); /* account for mob-nav */
+    overflow:hidden;
+    position:fixed;
+    top:52px;
+    left:0;right:0;
+    bottom:64px;
+  }
+
+  /* Slide area fills available height */
+  .slide-area{
+    flex:1;
+    min-height:0;
+    overflow:hidden;
+    position:relative;
+  }
+
+  /* Hide peek strips on mobile */
+  .peek-col{display:none}
+
+  /* Slide content: vertical stacked layout */
+  .slide-content{
+    flex-direction:column;
+    overflow-y:auto;
+    overflow-x:hidden;
+    -webkit-overflow-scrolling:touch;
+    scroll-snap-type:y mandatory;
+  }
+
+  /* LEFT section */
+  .slide-left{
+    padding:20px 18px 16px;
+    flex-shrink:0;
+    scroll-snap-align:start;
+    min-height:auto;
+  }
+
+  /* Smaller badge */
+  .sl-badge{font-size:9px;gap:6px}
+  .sl-badge-line{width:16px}
+  .sl-urgent{font-size:9px;padding:3px 8px}
+
+  /* Title size for mobile */
+  .sl-title{
+    font-size:clamp(22px,6vw,32px);
+    margin-bottom:8px;
+    max-width:100%;
+  }
+
+  /* Compact slot area */
+  .sl-slot-area{
+    margin:14px 0 12px;
+    gap:18px;
+  }
+  .sl-ring svg{width:80px;height:80px}
+  .sl-slot-frac{font-size:clamp(36px,9vw,52px)}
+
+  /* Nav row */
+  .sl-nav{
+    margin-top:14px;
+    gap:10px;
+  }
+  .nav-arrow{width:36px;height:36px;font-size:16px}
+  .ndot{width:5px;height:5px}
+  .ndot.active{width:16px}
+
+  /* RIGHT panel: horizontal scrollable deadline strip + member list */
+  .slide-right{
+    width:100%;
+    padding:0 0 16px;
+    flex-direction:column;
+    gap:8px;
+    flex-shrink:0;
+    border-top:1px solid rgba(255,255,255,.07);
+    scroll-snap-align:start;
+  }
+
+  /* Deadline card: horizontal strip */
+  .gc-deadlines{
+    background:rgba(255,255,255,.05);
+    border:none;
+    border-radius:0;
+    border-bottom:1px solid rgba(255,255,255,.06);
+  }
+  .gc-deadlines .gc-hdr{padding:8px 16px;border-radius:0}
+  .gc-deadlines .gc-body{
+    padding:8px 16px 12px;
+    display:flex;
+    gap:10px;
+    overflow-x:auto;
+    -webkit-overflow-scrolling:touch;
+    scrollbar-width:none;
+  }
+  .gc-deadlines .gc-body::-webkit-scrollbar{display:none}
+  .dl-item{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:4px;
+    padding:10px 12px;
+    border-bottom:none;
+    border-radius:10px;
+    background:rgba(255,255,255,.04);
+    border:1px solid rgba(255,255,255,.08);
+    min-width:110px;
+    flex-shrink:0;
+  }
+  .dl-dot{display:none}
+
+  /* Member section */
+  .gc-members{
+    background:transparent;
+    border:none;
+    border-radius:0;
+    margin:0 0 0;
+  }
+  .gc-members .gc-hdr{padding:8px 16px;border-radius:0;border-bottom:1px solid rgba(255,255,255,.07);background:rgba(255,255,255,.03)}
+  .gc-members .gc-body{padding:4px 16px 8px}
+  .mr{padding:10px 0}
+  .mr-av{width:30px;height:30px;font-size:11px}
+  .mr-btn{padding:6px 12px;font-size:11px;min-height:32px}
+
+  /* Delete button */
+  .del-btn{
+    margin:4px 16px 0;
+    width:calc(100% - 32px);
+    padding:11px;
+    font-size:12px;
+  }
+
+  /* FAB: move to bottom right, above mob-nav */
+  .fab{
+    bottom:calc(64px + 16px + env(safe-area-inset-bottom));
+    left:auto;
+    right:18px;
+    width:52px;
+    height:52px;
+    font-size:24px;
+  }
+  .fab-label{display:none}
+
+  /* Modal: full-width bottom sheet */
+  .modal{
+    border-radius:20px 20px 0 0;
+    padding:12px 18px calc(18px + env(safe-area-inset-bottom));
+    max-height:90svh;
+    overflow-y:auto;
+  }
+  .modal-title{font-size:15px;margin-bottom:14px}
+  .frow{flex-direction:column;gap:10px}
+  .frow .fg{width:100%}
+  .fg{width:100%}
+  .fi{font-size:15px;padding:12px 14px;min-height:48px}
+  .modal-btns{flex-direction:column;gap:8px}
+  .btn-p{width:100%;padding:13px;font-size:14px}
+  .btn-g{width:100%;padding:13px;font-size:14px;text-align:center}
+
+  /* Show mobile nav */
   .mob-nav{display:block}
-  body{padding-bottom:64px}
-  .fv-body{padding:14px 16px}
-  .sl-slot-frac{font-size:clamp(40px,10vw,64px)}
+
+  /* Full views */
+  #v-distribusi.active,#v-kalender.active,#v-anggota.active{
+    position:fixed;
+    top:52px;
+    left:0;right:0;
+    bottom:64px;
+    height:auto;
+    overflow:hidden;
+    min-height:0;
+  }
+  .fv-back{height:48px;padding:0 14px;gap:8px}
+  .fv-title{font-size:13px}
+  .fv-sub{display:none}
+  .fv-body{margin-top:48px;padding:14px 14px}
+
+  /* Calendar adjustments */
+  .cal-inner{padding:14px}
+  .cc{min-height:38px;font-size:10px;border-radius:6px}
+  .cal-month{font-size:12px}
+  .cal-nav{width:28px;height:28px;font-size:16px}
+
+  /* Members grid single column */
+  .mgrid{grid-template-columns:1fr;gap:7px}
+  .mcard{padding:10px 12px}
+
+  /* Sub-view sync badge visibility */
+  .fv-back .sync-b{font-size:9px;padding:3px 8px}
+}
+
+/* Very small phones */
+@media(max-width:380px){
+  .sl-title{font-size:20px}
+  .sl-slot-frac{font-size:34px}
+  .sl-ring svg{width:68px;height:68px}
+  .mob-btn{padding:5px 10px;font-size:9px;min-width:50px}
+  .mob-icon{font-size:18px}
 }
 </style>
 </head>
@@ -298,18 +491,14 @@ tfoot td{background:rgba(255,255,255,.03);font-weight:700;border-top:1px solid r
   <!-- SLIDE VIEW -->
   <div class="view active" id="v-slides">
     <div class="slide-area" id="slide-area">
-      <!-- Gradient bg -->
       <div class="slide-grad" id="slide-grad"></div>
       <div class="slide-noise"></div>
-      <!-- Content -->
       <div class="slide-wrap" id="slide-wrap">
         <div class="slide-content" id="slide-content"></div>
       </div>
-      <!-- FAB -->
       <button class="fab" onclick="openModal('mc')" title="Tambah Lomba">+</button>
       <div class="fab-label">Tambah Lomba</div>
     </div>
-    <!-- PEEK STRIPS -->
     <div class="peek-col" id="peek-col"></div>
   </div>
 
@@ -358,7 +547,7 @@ tfoot td{background:rgba(255,255,255,.03);font-weight:700;border-top:1px solid r
     <div class="fv-back">
       <button class="back-btn" onclick="showView('slides')">← Kembali</button>
       <div><div class="fv-title">Anggota Tim</div><div class="fv-sub">Kelola anggota kompetisi</div></div>
-      <button class="btn-o" style="margin-left:auto;font-size:11px;padding:6px 13px" onclick="openModal('mm')">+ Tambah Anggota</button>
+      <button class="btn-o" style="margin-left:auto;font-size:11px;padding:6px 13px" onclick="openModal('mm')">+ Tambah</button>
     </div>
     <div class="fv-body"><div class="mgrid" id="ml"></div></div>
   </div>
@@ -367,9 +556,23 @@ tfoot td{background:rgba(255,255,255,.03);font-weight:700;border-top:1px solid r
 <!-- MODAL: Add Competition -->
 <div class="modal-bg" id="mc">
   <div class="modal">
+    <div class="modal-drag"></div>
     <div class="modal-title">🏆 Tambah Lomba<button class="modal-close" onclick="closeModal('mc')">✕</button></div>
-    <div class="frow"><div class="fg" style="flex:2;min-width:160px"><label class="fl">Nama Lomba</label><input class="fi" id="cn" placeholder="Contoh: ENFICTION IV 2026" onkeydown="if(event.key==='Enter')sc2()"></div><div class="fg" style="min-width:70px"><label class="fl">Maks.</label><input class="fi" id="cm" type="number" min="1" max="20" value="3"></div></div>
-    <div class="frow"><div class="fg" style="flex:1;min-width:110px"><label class="fl" style="color:#60A5FA">Deadline Daftar</label><input class="fi" id="c-dd" type="date"></div><div class="fg" style="flex:1;min-width:110px"><label class="fl" style="color:#A78BFA">Deadline Submit</label><input class="fi" id="c-ds" type="date"></div><div class="fg" style="flex:1;min-width:110px"><label class="fl" style="color:#34D399">Pengumuman</label><input class="fi" id="c-dp" type="date"></div></div>
+    <div class="frow">
+      <div class="fg" style="flex:1"><label class="fl">Nama Lomba</label><input class="fi" id="cn" placeholder="Contoh: ENFICTION IV 2026" onkeydown="if(event.key==='Enter')sc2()"></div>
+    </div>
+    <div class="frow">
+      <div class="fg" style="flex:1"><label class="fl">Maks. Peserta</label><input class="fi" id="cm" type="number" min="1" max="20" value="3"></div>
+    </div>
+    <div class="frow">
+      <div class="fg" style="flex:1"><label class="fl" style="color:#60A5FA">Deadline Daftar</label><input class="fi" id="c-dd" type="date"></div>
+    </div>
+    <div class="frow">
+      <div class="fg" style="flex:1"><label class="fl" style="color:#A78BFA">Deadline Submit</label><input class="fi" id="c-ds" type="date"></div>
+    </div>
+    <div class="frow">
+      <div class="fg" style="flex:1"><label class="fl" style="color:#34D399">Pengumuman</label><input class="fi" id="c-dp" type="date"></div>
+    </div>
     <div class="modal-btns"><button class="btn-p" onclick="sc2()">Simpan Lomba</button><button class="btn-g" onclick="closeModal('mc')">Batal</button></div>
   </div>
 </div>
@@ -377,8 +580,11 @@ tfoot td{background:rgba(255,255,255,.03);font-weight:700;border-top:1px solid r
 <!-- MODAL: Add Member -->
 <div class="modal-bg" id="mm">
   <div class="modal">
+    <div class="modal-drag"></div>
     <div class="modal-title">👥 Tambah Anggota<button class="modal-close" onclick="closeModal('mm')">✕</button></div>
-    <div class="frow"><div class="fg" style="flex:1"><label class="fl">Nama Anggota</label><input class="fi" id="mnn" placeholder="Nama lengkap" onkeydown="if(event.key==='Enter')sm2()"></div></div>
+    <div class="frow">
+      <div class="fg" style="flex:1"><label class="fl">Nama Anggota</label><input class="fi" id="mnn" placeholder="Nama lengkap" onkeydown="if(event.key==='Enter')sm2()"></div>
+    </div>
     <div class="modal-btns"><button class="btn-p" onclick="sm2()">Simpan</button><button class="btn-g" onclick="closeModal('mm')">Batal</button></div>
   </div>
 </div>
@@ -407,8 +613,8 @@ const MI=['Januari','Februari','Maret','April','Mei','Juni','Juli','Agustus','Se
 const MS=['Jan','Feb','Mar','Apr','Mei','Jun','Jul','Agu','Sep','Okt','Nov','Des'];
 const td=()=>new Date().toISOString().split('T')[0];
 const fmt=d=>{if(!d)return'';const[y,m,day]=d.split('-');return`${parseInt(day)} ${MS[parseInt(m)-1]}`;};
+const isMobile=()=>window.innerWidth<=700;
 
-// Unique color per slide (cycling)
 const SLIDE_COLS=[
   {grad:'linear-gradient(140deg,rgba(124,92,240,.55) 0%,rgba(56,182,255,.15) 50%,rgba(7,9,26,0) 80%)',accent:'#A78BFA',ring:'#7C5CF0',peek:'rgba(124,92,240,.4)'},
   {grad:'linear-gradient(140deg,rgba(239,68,68,.5) 0%,rgba(251,191,36,.12) 50%,rgba(7,9,26,0) 80%)',accent:'#F87171',ring:'#EF4444',peek:'rgba(239,68,68,.4)'},
@@ -429,9 +635,9 @@ function setSS(s,t){
   ['sync-text','sync-text2'].forEach(id=>{const el=document.getElementById(id);if(el)el.textContent=t;});
 }
 
-function ringSVG(f,mx,accent,ring){
+function ringSVG(f,mx,accent,ring,size=112){
   const r=46,circ=2*Math.PI*r,pct=mx>0?Math.min(f/mx,1):0,off=circ*(1-pct);
-  return `<svg width="112" height="112" viewBox="0 0 100 100"><circle cx="50" cy="50" r="${r}" fill="none" stroke="rgba(255,255,255,.08)" stroke-width="7"/><circle cx="50" cy="50" r="${r}" fill="none" stroke="${ring}" stroke-width="7" stroke-dasharray="${circ.toFixed(1)}" stroke-dashoffset="${off.toFixed(1)}" stroke-linecap="round" transform="rotate(-90 50 50)" style="filter:drop-shadow(0 0 5px ${ring})"/></svg>`;
+  return `<svg width="${size}" height="${size}" viewBox="0 0 100 100"><circle cx="50" cy="50" r="${r}" fill="none" stroke="rgba(255,255,255,.08)" stroke-width="7"/><circle cx="50" cy="50" r="${r}" fill="none" stroke="${ring}" stroke-width="7" stroke-dasharray="${circ.toFixed(1)}" stroke-dashoffset="${off.toFixed(1)}" stroke-linecap="round" transform="rotate(-90 50 50)" style="filter:drop-shadow(0 0 5px ${ring})"/></svg>`;
 }
 
 function renderSlide(animate=true,dir=1){
@@ -446,28 +652,26 @@ function renderSlide(animate=true,dir=1){
     const content=document.getElementById('slide-content');
     if(!C.length){
       grad.style.background='none';
-      content.innerHTML=`<div class="slide-empty"><img class="empty-trophy" src="./trophy.png" alt=""><div class="empty-title">Competition Hub</div><div class="empty-sub">Belum ada lomba. Klik <strong>+</strong> di pojok kiri bawah untuk mulai.</div></div>`;
+      content.innerHTML=`<div class="slide-empty"><img class="empty-trophy" src="./trophy.png" alt=""><div class="empty-title">Competition Hub</div><div class="empty-sub">Belum ada lomba. Klik <strong>+</strong> untuk mulai.</div></div>`;
       document.getElementById('peek-col').innerHTML='';
       return;
     }
     if(curIdx>=C.length)curIdx=C.length-1;
     const c=C[curIdx],ci=col(curIdx),f=cc(c.id),t=td(),isFull=f>=c.max;
     const next=getNext(c);
-    // BG
     grad.style.background=ci.grad;
-    // Dot nav
     const dots=C.map((_,i)=>`<button class="ndot${i===curIdx?' active':''}" onclick="window.navTo(${i})"></button>`).join('');
-    // Slot ring
-    const ring=ringSVG(f,c.max,ci.accent,ci.ring);
+    const ringSize=isMobile()?80:112;
+    const ring=ringSVG(f,c.max,ci.accent,ci.ring,ringSize);
     const sColor=slotColor(f,c.max);
-    // Urgent badge
     const urgBadge=next?`<div class="sl-urgent" style="color:${next.color};border-color:${next.color}30;background:${next.color}10">⏱ ${next.label}: ${fmt(next.date)}</div>`:'';
-    // Deadline items
-    const dlItems=[{k:'deadline_daftar',col:'#60A5FA',lbl:'Deadline Daftar'},{k:'deadline_submit',col:'#A78BFA',lbl:'Deadline Submit'},{k:'pengumuman',col:'#34D399',lbl:'Pengumuman'}].map(({k,col:dc,lbl})=>{
+
+    // Deadline items — mobile shows as horizontal cards
+    const dlItems=[{k:'deadline_daftar',col:'#60A5FA',lbl:'Deadline Daftar'},{k:'deadline_submit',col:'#A78BFA',lbl:'Submit'},{k:'pengumuman',col:'#34D399',lbl:'Pengumuman'}].map(({k,col:dc,lbl})=>{
       const v=c[k];const isPast=v&&v<t;
       return `<div class="dl-item${isPast?' dl-past':''}"><div class="dl-dot" style="background:${dc}"></div><div class="dl-info"><div class="dl-type" style="color:${dc}">${lbl}</div>${v?`<div class="dl-date">${fmt(v)}</div>${isPast?'<div style="font-size:9px;color:#FF6B6B;margin-top:1px;font-weight:700">Sudah lewat</div>':''}`:`<div class="dl-empty">Belum diset</div>`}</div></div>`;
     }).join('');
-    // Member rows
+
     const memberRows=[...M.map(m=>{
       const on=ia(m.id,c.id);
       if(on)return `<div class="mr"><div class="mr-av" style="background:linear-gradient(135deg,${ci.ring}99,rgba(56,182,255,.5))">${m.name.charAt(0).toUpperCase()}</div><div class="mr-name">${m.name}</div><button class="mr-btn mr-on" onclick="window._ta('${m.id}','${c.id}')">Hapus</button></div>`;
@@ -500,31 +704,35 @@ function renderSlide(animate=true,dir=1){
       </div>
     </div>
     <div class="slide-right">
-      <div class="glass-card">
+      <div class="glass-card gc-deadlines">
         <div class="gc-hdr">Tenggat Waktu</div>
         <div class="gc-body">${dlItems}</div>
       </div>
-      <div class="glass-card">
+      <div class="glass-card gc-members">
         <div class="gc-hdr">Anggota Tim <span style="color:rgba(255,255,255,.3);font-weight:500">${f}/${c.max}</span></div>
         <div class="gc-body">${M.length?memberRows:noM}</div>
       </div>
       <button class="del-btn" onclick="window._dc('${c.id}')">Hapus Lomba Ini</button>
     </div>`;
 
-    // Peek strips (other competitions)
-    const others=C.map((x,i)=>({c:x,i})).filter(({i})=>i!==curIdx).slice(0,4);
-    const peekCol=document.getElementById('peek-col');
-    peekCol.innerHTML=others.map(({c:oc,i})=>{
-      const oci=col(i),of=cc(oc.id),opct=Math.min(of/oc.max,1);
-      const oSCol=slotColor(of,oc.max);
-      const short=oc.title.length>14?oc.title.slice(0,14)+'…':oc.title;
-      return `<div class="peek" onclick="window.navTo(${i})" title="${oc.title}">
-        <div class="peek-bg" style="background:${oci.grad}"></div>
-        <div class="peek-txt">${short}</div>
-        <div class="peek-slot" style="color:${oSCol}">${of}/${oc.max}</div>
-        <div class="peek-bar" style="background:linear-gradient(90deg,${oSCol},transparent);opacity:.6"></div>
-      </div>`;
-    }).join('');
+    // Peek strips (desktop only)
+    if(!isMobile()){
+      const others=C.map((x,i)=>({c:x,i})).filter(({i})=>i!==curIdx).slice(0,4);
+      const peekCol=document.getElementById('peek-col');
+      peekCol.innerHTML=others.map(({c:oc,i})=>{
+        const oci=col(i),of=cc(oc.id);
+        const oSCol=slotColor(of,oc.max);
+        const short=oc.title.length>14?oc.title.slice(0,14)+'…':oc.title;
+        return `<div class="peek" onclick="window.navTo(${i})" title="${oc.title}">
+          <div class="peek-bg" style="background:${oci.grad}"></div>
+          <div class="peek-txt">${short}</div>
+          <div class="peek-slot" style="color:${oSCol}">${of}/${oc.max}</div>
+          <div class="peek-bar" style="background:linear-gradient(90deg,${oSCol},transparent);opacity:.6"></div>
+        </div>`;
+      }).join('');
+    }else{
+      document.getElementById('peek-col').innerHTML='';
+    }
   };
 
   if(animate){
@@ -560,7 +768,7 @@ function renderCal(){
   document.getElementById('cal-grid').innerHTML=html;
   const ced=document.getElementById('cal-ev-det');
   if(!selDate){ced.innerHTML='';return;}
-  const evs=evMap[selDate]||[];const[y,m,d]=selDate.split('-'),isPast=selDate<t;
+  const evs=evMap[selDate]||[];
   if(!evs.length){ced.innerHTML='';return;}
   ced.innerHTML=evs.map(e=>`<div class="cal-ev-r"><div style="width:6px;height:6px;border-radius:50%;background:${e.color};flex-shrink:0;margin-top:3px"></div><div><div style="font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:${e.color}">${e.label}</div><div style="font-size:12px;color:rgba(255,255,255,.7)">${e.title}</div></div></div>`).join('');
 }
@@ -605,7 +813,6 @@ async function sa(){
   catch(e){setSS('err','Gagal');['cmc_c','cmc_m','cmc_a'].forEach((k,i)=>localStorage.setItem(k,JSON.stringify([C,M,A][i])));}
 }
 
-// Globals
 window.navTo=i=>{const dir=i>curIdx?1:-1;curIdx=i;render(true,dir);};
 window.navPrev=()=>{if(curIdx>0){curIdx--;render(true,-1);}};
 window.navNext=()=>{if(curIdx<C.length-1){curIdx++;render(true,1);}};
@@ -616,9 +823,18 @@ window.showView=n=>{
   document.querySelectorAll('.tn,.mob-btn').forEach(el=>{if(el.onclick?.toString().includes("'"+n+"'"))el.classList.add('active');});
   if(n==='kalender')renderCal();
 };
-window.openModal=id=>{document.getElementById(id).classList.add('open');setTimeout(()=>{const i=document.getElementById(id).querySelector('input');if(i)i.focus();},100);};
+window.openModal=id=>{
+  document.getElementById(id).classList.add('open');
+  setTimeout(()=>{const i=document.getElementById(id).querySelector('input');if(i)i.focus();},300);
+};
 window.closeModal=id=>{document.getElementById(id).classList.remove('open');};
-window.sc2=()=>{const t=document.getElementById('cn').value.trim(),mx=parseInt(document.getElementById('cm').value)||3;if(!t)return;C.push({id:gid(),title:t,max:mx,deadline_daftar:document.getElementById('c-dd').value||'',deadline_submit:document.getElementById('c-ds').value||'',pengumuman:document.getElementById('c-dp').value||''});sa();['cn','c-dd','c-ds','c-dp'].forEach(id=>document.getElementById(id).value='');document.getElementById('cm').value='3';closeModal('mc');curIdx=C.length-1;render(true,1);};
+window.sc2=()=>{
+  const t=document.getElementById('cn').value.trim(),mx=parseInt(document.getElementById('cm').value)||3;
+  if(!t)return;
+  C.push({id:gid(),title:t,max:mx,deadline_daftar:document.getElementById('c-dd').value||'',deadline_submit:document.getElementById('c-ds').value||'',pengumuman:document.getElementById('c-dp').value||''});
+  sa();['cn','c-dd','c-ds','c-dp'].forEach(id=>document.getElementById(id).value='');document.getElementById('cm').value='3';
+  closeModal('mc');curIdx=C.length-1;render(true,1);
+};
 window._dc=id=>{if(!confirm('Hapus lomba ini?'))return;const i=C.findIndex(c=>c.id===id);C.splice(i,1);A=A.filter(a=>a.c!==id);if(curIdx>=C.length)curIdx=Math.max(0,C.length-1);sa();render(true,0);};
 window.sm2=()=>{const n=document.getElementById('mnn').value.trim();if(!n)return;M.push({id:gid(),name:n});sa();document.getElementById('mnn').value='';closeModal('mm');renderAnggota();renderSlide(false);};
 window._dm=id=>{M=M.filter(m=>m.id!==id);A=A.filter(a=>a.m!==id);sa();renderAnggota();renderSlide(false);};
@@ -628,13 +844,31 @@ window.nextM=()=>{calM++;if(calM>11){calM=0;calY++;}renderCal();};
 window.goToday=()=>{const n=new Date();calY=n.getFullYear();calM=n.getMonth();selDate=td();renderCal();};
 window.selDay=d=>{selDate=selDate===d?null:d;renderCal();};
 
-// Keyboard & swipe
-document.addEventListener('keydown',e=>{if(document.querySelector('#v-slides.active')){if(e.key==='ArrowLeft')window.navPrev();if(e.key==='ArrowRight')window.navNext();}if(e.key==='Escape')document.querySelectorAll('.modal-bg').forEach(m=>m.classList.remove('open'));});
-let tx=0;
-document.addEventListener('touchstart',e=>{tx=e.touches[0].clientX;},{passive:true});
-document.addEventListener('touchend',e=>{if(!document.querySelector('#v-slides.active'))return;const diff=tx-e.changedTouches[0].clientX;if(Math.abs(diff)>50){diff>0?window.navNext():window.navPrev();}});
-// Close modal on backdrop click
+// Keyboard
+document.addEventListener('keydown',e=>{
+  if(document.querySelector('#v-slides.active')){
+    if(e.key==='ArrowLeft')window.navPrev();
+    if(e.key==='ArrowRight')window.navNext();
+  }
+  if(e.key==='Escape')document.querySelectorAll('.modal-bg').forEach(m=>m.classList.remove('open'));
+});
+
+// Swipe
+let tx=0,ty=0;
+document.addEventListener('touchstart',e=>{tx=e.touches[0].clientX;ty=e.touches[0].clientY;},{passive:true});
+document.addEventListener('touchend',e=>{
+  if(!document.querySelector('#v-slides.active'))return;
+  const dx=tx-e.changedTouches[0].clientX;
+  const dy=ty-e.changedTouches[0].clientY;
+  // Only horizontal swipe (not vertical scroll)
+  if(Math.abs(dx)>Math.abs(dy)&&Math.abs(dx)>50){dx>0?window.navNext():window.navPrev();}
+});
+
+// Modal backdrop click
 document.querySelectorAll('.modal-bg').forEach(el=>el.addEventListener('click',e=>{if(e.target===el)el.classList.remove('open');}));
+
+// Re-render on resize (desktop<->mobile toggle)
+let rz;window.addEventListener('resize',()=>{clearTimeout(rz);rz=setTimeout(()=>renderSlide(false),150);});
 
 init();
 </script>
